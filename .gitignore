@@ -47,3 +47,5 @@ app.*.map.json
 # Unreal Engine/Training Workshop resources
 _resources/
 
+# InnoSetup Output
+/Output/
