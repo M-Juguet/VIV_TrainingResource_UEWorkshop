@@ -6,6 +6,9 @@ import 'package:training_toolkit/theme.dart';
 import 'package:training_toolkit/models/session.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:training_toolkit/widgets/update_listener_wrapper.dart';
+import 'package:training_toolkit/widgets/settings_view.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,7 +28,7 @@ void main() async {
     await windowManager.focus();
   });
 
-  runApp(const UnrealWindowsApp());
+  runApp(const ProviderScope(child: UnrealWindowsApp()));
 }
 
 class UnrealWindowsApp extends StatelessWidget {
@@ -117,51 +120,59 @@ class _WindowsMainScaffoldState extends State<WindowsMainScaffold> {
       bindings: {
         const SingleActivator(LogicalKeyboardKey.escape): _closeFullscreen,
       },
-      child: Scaffold(
-        body: Stack(
-          children: [
-            Row(
-              children: [
-                _buildModernSidebar(),
-                Expanded(
-                  child: Container(
-                    color: SaasTheme.background,
-                    child: SingleChildScrollView(
-                      controller: _mainScrollController,
-                      child: Align(
-                        alignment: Alignment.topCenter,
-                        child: ConstrainedBox(
-                          constraints: const BoxConstraints(maxWidth: 1200),
-                          child: Padding(
-                            padding: const EdgeInsets.fromLTRB(60, 110, 60, 60),
-                            child: AnimatedSwitcher(
-                              duration: const Duration(milliseconds: 400),
-                              layoutBuilder:
-                                  (
-                                    Widget? currentChild,
-                                    List<Widget> previousChildren,
-                                  ) {
-                                    return Stack(
-                                      alignment: Alignment.topCenter,
-                                      children: <Widget>[
-                                        ...previousChildren,
-                                        if (currentChild != null) currentChild,
-                                      ],
-                                    );
-                                  },
-                              child: _buildMainContent(),
+      child: UpdateListenerWrapper(
+        child: Scaffold(
+          body: Stack(
+            children: [
+              Row(
+                children: [
+                  _buildModernSidebar(),
+                  Expanded(
+                    child: Container(
+                      color: SaasTheme.background,
+                      child: SingleChildScrollView(
+                        controller: _mainScrollController,
+                        child: Align(
+                          alignment: Alignment.topCenter,
+                          child: ConstrainedBox(
+                            constraints: const BoxConstraints(maxWidth: 1200),
+                            child: Padding(
+                              padding: const EdgeInsets.fromLTRB(
+                                60,
+                                110,
+                                60,
+                                60,
+                              ),
+                              child: AnimatedSwitcher(
+                                duration: const Duration(milliseconds: 400),
+                                layoutBuilder:
+                                    (
+                                      Widget? currentChild,
+                                      List<Widget> previousChildren,
+                                    ) {
+                                      return Stack(
+                                        alignment: Alignment.topCenter,
+                                        children: <Widget>[
+                                          ...previousChildren,
+                                          if (currentChild != null)
+                                            currentChild,
+                                        ],
+                                      );
+                                    },
+                                child: _buildMainContent(),
+                              ),
                             ),
                           ),
                         ),
                       ),
                     ),
                   ),
-                ),
-              ],
-            ),
-            _buildWindowsTopBar(),
-            if (_activeFullscreenImage != null) _buildFullscreenOverlay(),
-          ],
+                ],
+              ),
+              _buildWindowsTopBar(),
+              if (_activeFullscreenImage != null) _buildFullscreenOverlay(),
+            ],
+          ),
         ),
       ),
     );
@@ -328,6 +339,8 @@ class _WindowsMainScaffoldState extends State<WindowsMainScaffold> {
           }
         },
       );
+    } else if (_selectedSessionIndex == -10000) {
+      return const SettingsView(key: ValueKey('settings'));
     } else if (_selectedSessionIndex >= 1000 &&
         _selectedSessionIndex < 1000 + basicsSessions.length) {
       final index = _selectedSessionIndex - 1000;
@@ -573,6 +586,7 @@ class _WindowsMainScaffoldState extends State<WindowsMainScaffold> {
             ),
           ),
           const Divider(),
+          _sidebarItem(Icons.settings, 'Paramètres', -10000),
           _sidebarItem(Icons.help_outline, 'Aide & Docs', -9999),
         ],
       ),
@@ -1931,7 +1945,9 @@ class BookmarksListView extends StatelessWidget {
       }
     } else if (module is FullMediaModule) {
       final c = module.caption;
-      moduleTitle = (c != null && c.trim().isNotEmpty) ? c : "Média plein écran";
+      moduleTitle = (c != null && c.trim().isNotEmpty)
+          ? c
+          : "Média plein écran";
     } else if (module is InfoModule) {
       String prefix = "Info";
       switch (module.type) {
@@ -1955,12 +1971,16 @@ class BookmarksListView extends StatelessWidget {
           break;
       }
       final cleanText = module.text.trim();
-      moduleTitle = "$prefix : ${cleanText.length > 40 ? "${cleanText.substring(0, 37)}..." : cleanText}";
+      moduleTitle =
+          "$prefix : ${cleanText.length > 40 ? "${cleanText.substring(0, 37)}..." : cleanText}";
       if (cleanText.isEmpty) moduleTitle = "$prefix technique";
     } else if (module is ResourceModule) {
-      moduleTitle = "Ressource : ${module.title.trim().isNotEmpty ? module.title : module.fileName}";
+      moduleTitle =
+          "Ressource : ${module.title.trim().isNotEmpty ? module.title : module.fileName}";
     } else if (module is ListModule) {
-      moduleTitle = module.title.trim().isNotEmpty ? module.title : "Liste de points";
+      moduleTitle = module.title.trim().isNotEmpty
+          ? module.title
+          : "Liste de points";
     } else if (module is QuizModule) {
       final q = module.question.trim();
       moduleTitle = "Quiz : ${q.length > 40 ? "${q.substring(0, 37)}..." : q}";
