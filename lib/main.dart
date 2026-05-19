@@ -918,10 +918,12 @@ class _SessionShowcaseViewState extends State<SessionShowcaseView> {
             _buildLegacyContent(widget.session)
           else
             ...widget.session.modules.map((module) => _renderModule(module)),
-          const SizedBox(height: 80),
-          _showcaseHeader('PROJET FIL ROUGE'),
-          const SizedBox(height: 24),
-          _FilRougeCard(content: widget.session.filRouge),
+          if (!widget.session.isUnderConstruction) ...[
+            const SizedBox(height: 80),
+            _showcaseHeader('PROJET FIL ROUGE'),
+            const SizedBox(height: 24),
+            _FilRougeCard(content: widget.session.filRouge),
+          ],
           _buildFooterNavigation(),
         ],
       ),

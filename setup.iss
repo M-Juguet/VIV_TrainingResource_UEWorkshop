@@ -2,7 +2,7 @@
 ; REMARQUE : La valeur de AppId identifie l'application. Ne la modifiez pas si vous publiez des mises à jour !
 AppId={{5C9E1B23-C2A8-4395-8F12-88E6A6A5E3E7}
 AppName=Training Toolkit
-AppVersion=0.1.1
+AppVersion=0.1.2
 AppPublisher=VIV
 ; Installation au niveau utilisateur pour éviter l'UAC (nécessaire pour les MAJ automatiques silencieuses)
 DefaultDirName={userpf}\TrainingToolkit

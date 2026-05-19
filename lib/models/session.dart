@@ -126,6 +126,8 @@ class SessionModel {
     required this.icon,
     this.modules = const [],
   });
+
+  bool get isUnderConstruction => (id >= 101 && id <= 103) || (id >= 3 && id <= 8);
 }
 
 const List<SessionModel> basicsSessions = [
@@ -142,18 +144,11 @@ const List<SessionModel> basicsSessions = [
     filRouge: "Comprendre l'écosystème dans lequel vous allez évoluer.",
     icon: Icons.history_edu_rounded,
     modules: [
-      TitleModule(id: 'base_1_title', title: "L'Héritage Epic Games"),
-      TextModule(
-        id: 'base_1_history',
-        title: "De ZZT à Unreal Engine 5",
-        content:
-            "Fondée par Tim Sweeney en 1991, Epic Games est passée de petits jeux de niche à l'un des acteurs les plus puissants de l'industrie technologique mondiale. Unreal Engine, initialement créé pour le jeu 'Unreal' en 1998, est devenu le standard de l'industrie pour la 3D temps réel.",
-      ),
       InfoModule(
-        id: 'base_1_philosophy',
+        id: 'basics_101_info',
         text:
-            "La philosophie d'Epic est basée sur l'accessibilité : donner aux créateurs indépendants les mêmes outils qu'aux studios AAA.",
-        type: InfoType.idea,
+            "Cette partie de la formation est actuellement en cours de développement. Elle sera disponible très prochainement dans une future mise à jour de l'application !",
+        type: InfoType.info,
       ),
     ],
   ),
@@ -169,20 +164,11 @@ const List<SessionModel> basicsSessions = [
     filRouge: "Configurer son environnement de travail.",
     icon: Icons.rocket_launch_rounded,
     modules: [
-      TitleModule(id: 'base_2_title', title: "Le Centre de Contrôle"),
-      TextModule(
-        id: 'base_2_launcher',
-        title: "Gérer ses versions du moteur",
-        content:
-            "Le Launcher permet d'installer plusieurs versions d'Unreal Engine en parallèle. Pour la production cinématique, il est conseillé de rester sur les versions 'Stable' (ex: 5.4, 5.5) plutôt que les versions 'Preview'.",
-      ),
-      SideBySideModule(
-        id: 'base_2_marketplace',
-        title: "Marketplace & Bibliothèque",
-        content:
-            "C'est ici que vous gérez vos projets et vos assets. Chaque mois, Epic offre une sélection d'assets premium gratuits : ne les manquez pas !",
-        imagePath: 'assets/images/launcher_library.jpg',
-        layout: ContentLayout.textRight,
+      InfoModule(
+        id: 'basics_102_info',
+        text:
+            "Cette partie de la formation est actuellement en cours de développement. Elle sera disponible très prochainement dans une future mise à jour de l'application !",
+        type: InfoType.info,
       ),
     ],
   ),
@@ -198,17 +184,10 @@ const List<SessionModel> basicsSessions = [
     filRouge: "Vérifier ses acquis théoriques.",
     icon: Icons.view_in_ar_rounded,
     modules: [
-      TitleModule(id: 'base_3_title', title: "Les Lois de l'Espace"),
-      TextModule(
-        id: 'base_3_axes',
-        title: "Le Système de Coordonnées",
-        content:
-            "Unreal Engine utilise un système 'Z-Up' (l'axe Z pointe vers le haut), contrairement à d'autres logiciels comme Maya ou Blender (souvent Y-Up). Il est crucial de s'en souvenir lors de l'import d'assets.",
-      ),
       InfoModule(
-        id: 'base_3_units',
+        id: 'basics_103_info',
         text:
-            "Rappel : 1 unité Unreal = 1 centimètre. Un personnage standard mesure environ 180 unités.",
+            "Cette partie de la formation est actuellement en cours de développement. Elle sera disponible très prochainement dans une future mise à jour de l'application !",
         type: InfoType.info,
       ),
     ],
@@ -1544,53 +1523,11 @@ const List<SessionModel> unrealSessions = [
     ],
     filRouge: "Créer un 'Master Material' paramétrable.",
     modules: [
-      const TextModule(
-        id: '3_intro',
-        title: "Le Workflow 'Instance-First'",
-        content:
-            "On ne crée jamais un matériau par objet. On crée un seul 'Master Material' robuste, puis on décline des 'Instances' pour chaque variation de couleur ou de texture.",
-      ),
-      const SideBySideModule(
-        id: '3_master',
-        title: "Anatomie d'un Master Material",
-        content:
-            "Un bon matériau maître doit inclure des Scalar et Vector Parameters pour permettre aux artistes de tout modifier sans recompiler les shaders.",
-        imagePath: 'assets/images/master_material_node.jpg',
-        layout: ContentLayout.textLeft,
-      ),
-      const InfoModule(
-        id: '3_tip_fresnel',
+      InfoModule(
+        id: 'unreal_3_info',
         text:
-            "LE LOOK PRO : Utilisez le nœud 'Fresnel' pour ajouter une légère brillance sur les bords de vos objets, ce qui simule la réflexion de la lumière réelle.",
-        type: InfoType.tip,
-      ),
-      const SideBySideModule(
-        id: '3_layers',
-        title: "Material Layers & Blending",
-        content:
-            "Apprenez à mélanger la pierre et la mousse grâce au Vertex Painting ou à des masques de texture. C'est le secret des décors organiques.",
-        imagePath: 'assets/images/material_blending.jpg',
-        layout: ContentLayout.textRight,
-      ),
-      const InfoModule(
-        id: '3_tip',
-        text:
-            "L'instance de matériel est obligatoire pour les performances. Ne jamais utiliser de Parent Material directement sur un mesh.",
-        type: InfoType.tip,
-      ),
-      const QuizModule(
-        id: '3_quiz_instance',
-        question:
-            "Quel est l'avantage principal d'utiliser une Material Instance plutôt qu'un Material classique ?",
-        options: [
-          "C'est plus joli visuellement",
-          "Les modifications sont visibles en temps réel sans temps de compilation",
-          "On peut l'utiliser sans textures",
-          "C'est réservé aux Blueprints",
-        ],
-        correctIndices: [1],
-        explanation:
-            "La Material Instance ne nécessite pas de recompiler le code du shader (les 'shaders' de la carte graphique), ce qui rend le workflow instantané.",
+            "Cette partie de la formation est actuellement en cours de développement. Elle sera disponible très prochainement dans une future mise à jour de l'application !",
+        type: InfoType.info,
       ),
     ],
   ),
@@ -1607,53 +1544,11 @@ const List<SessionModel> unrealSessions = [
     ],
     filRouge: "Créer deux 'Lighting Scenarios'.",
     modules: [
-      const TextModule(
-        id: '4_lumen',
-        title: "La Révolution LUMEN",
-        content:
-            "Lumen est le système de Global Illumination dynamique d'Unreal 5. Plus besoin de 'Bake' les lumières pendant des heures : la lumière rebondit en temps réel.",
-      ),
-      const InfoModule(
-        id: '4_warning',
+      InfoModule(
+        id: 'unreal_4_info',
         text:
-            "Lumen nécessite du matériel compatible DX12. Vérifiez vos réglages projet en cas d'artefacts noirs.",
-        type: InfoType.warning,
-      ),
-      const SideBySideModule(
-        id: '4_sky',
-        title: "Sun & Sky System",
-        content:
-            "Le plugin Sun & Sky permet de simuler la position réelle du soleil selon l'heure et la géolocalisation. Indispensable pour l'architecture.",
-        imagePath: 'assets/images/sun_and_sky.jpg',
-        layout: ContentLayout.textRight,
-      ),
-      const FullMediaModule(
-        id: '4_hdr',
-        imagePath: 'assets/images/hdr_backdrop.jpg',
-        caption:
-            "L'HDRI Backdrop projette une image 360° pour servir de fond et de source de lumière réaliste (Skylight).",
-      ),
-      const SideBySideModule(
-        id: '4_fog',
-        title: "Apporter de la Profondeur",
-        content:
-            "Grâce à l'Exponential Height Fog et aux Volumetric Clouds, on donne une sensation de distance et d'échelle monumentale au décor.",
-        imagePath: 'assets/images/volumetric_fog.jpg',
-        layout: ContentLayout.textLeft,
-      ),
-      const QuizModule(
-        id: '4_quiz_lumen',
-        question:
-            "Pour que Lumen fonctionne de manière optimale, quel type de mobilité doit être sélectionné sur vos lumières ?",
-        options: [
-          "Static (Lumière fixe)",
-          "Stationary (Mixte)",
-          "Movable (Dynamique)",
-          "Hidden (Cachée)",
-        ],
-        correctIndices: [2],
-        explanation:
-            "Lumen est un système temps réel ; il préfère les lumières en mode 'Movable' pour recalculer les rebonds instantanément.",
+            "Cette partie de la formation est actuellement en cours de développement. Elle sera disponible très prochainement dans une future mise à jour de l'application !",
+        type: InfoType.info,
       ),
     ],
   ),
@@ -1670,25 +1565,11 @@ const List<SessionModel> unrealSessions = [
     ],
     filRouge: "Animer un véhicule sur une Spline.",
     modules: [
-      const TextModule(
-        id: '5_intro',
-        title: "Le Monter-Réalisateur",
-        content:
-            "Le Sequencer est l'équivalent de Premiere Pro ou DaVinci Resolve, mais à l'intérieur d'un moteur 3D. C'est ici que l'on orchestre tout.",
-      ),
-      const SideBySideModule(
-        id: '5_keyframing',
-        title: "Le Principe des Keyframes",
-        content:
-            "En cliquant sur le petit diamant, vous enregistrez une position à un instant T. Unreal calcule ensuite tout le mouvement intermédiaire.",
-        imagePath: 'assets/images/sequencer_keys.jpg',
-        layout: ContentLayout.textLeft,
-      ),
-      const InfoModule(
-        id: '5_tip_sockets',
+      InfoModule(
+        id: 'unreal_5_info',
         text:
-            "L'ASTUCE DES SOCKETS : Vous pouvez 'attacher' un objet à un autre (ex: une caméra sur une voiture) très facilement via le menu 'Attach to'.",
-        type: InfoType.tip,
+            "Cette partie de la formation est actuellement en cours de développement. Elle sera disponible très prochainement dans une future mise à jour de l'application !",
+        type: InfoType.info,
       ),
     ],
   ),
@@ -1705,37 +1586,11 @@ const List<SessionModel> unrealSessions = [
     ],
     filRouge: "Poser les 5 plans caméras principaux.",
     modules: [
-      const TextModule(
-        id: '6_cinecamera',
-        title: "La Cine Camera Actor",
-        content:
-            "Contrairement à la caméra de base, la Cine Camera simule une caméra réelle avec un capteur 35mm, un diaphragme et une focale précise.",
-      ),
-      const InfoModule(
-        id: '6_idea',
+      InfoModule(
+        id: 'unreal_6_info',
         text:
-            "Réglez vos caméras en 'Cine Camera Actor' pour avoir accès aux réglages de focales réelles.",
-        type: InfoType.idea,
-      ),
-      const SideBySideModule(
-        id: '6_focus',
-        title: "Mise au point (Focus)",
-        content:
-            "On ne laisse jamais le focus en automatique. Apprenez à utiliser le 'Focus Picker' ou à tracker un objet spécifique pour un look cinéma.",
-        imagePath: 'assets/images/camera_focus.jpg',
-        layout: ContentLayout.textRight,
-      ),
-      const FullMediaModule(
-        id: '6_crane',
-        imagePath: 'assets/images/camera_rigs.jpg',
-        caption:
-            "Utilisez les Rig Rails pour les travellings souples et les Rig Cranes pour les mouvements de grue complexes.",
-      ),
-      const InfoModule(
-        id: '7_idea',
-        text:
-            "Utilisez les 'Take Recorder' pour capturer des mouvements complexes en temps réel.",
-        type: InfoType.idea,
+            "Cette partie de la formation est actuellement en cours de développement. Elle sera disponible très prochainement dans une future mise à jour de l'application !",
+        type: InfoType.info,
       ),
     ],
   ),
@@ -1747,25 +1602,11 @@ const List<SessionModel> unrealSessions = [
     technicalPoints: ["PP Volume", "Camera Cuts", "Transitions"],
     filRouge: "Appliquer un étalonnage distinct par plan.",
     modules: [
-      const TextModule(
-        id: '7_grading',
-        title: "La Magie du Post-Process",
-        content:
-            "Le Post-Process Volume est votre laboratoire de développement numérique. C'est ici que l'on définit le contraste, la saturation et les effets de lentille (Bloom, Vignette).",
-      ),
-      const InfoModule(
-        id: '5_idea',
+      InfoModule(
+        id: 'unreal_7_info',
         text:
-            "Expérimentez avec le Post Process Volume pour donner une 'âme' à votre scène sans toucher aux lumières.",
-        type: InfoType.idea,
-      ),
-      const SideBySideModule(
-        id: '7_montage',
-        title: "La Track 'Camera Cuts'",
-        content:
-            "C'est la timeline de montage. On y glisse nos différentes caméras pour créer l'enchaînement narratif de notre séquence de 30 secondes.",
-        imagePath: 'assets/images/camera_cuts.jpg',
-        layout: ContentLayout.textLeft,
+            "Cette partie de la formation est actuellement en cours de développement. Elle sera disponible très prochainement dans une future mise à jour de l'application !",
+        type: InfoType.info,
       ),
     ],
   ),
@@ -1781,25 +1622,11 @@ const List<SessionModel> unrealSessions = [
     ],
     filRouge: "Réaliser l'export final.",
     modules: [
-      const TextModule(
-        id: '8_mrq',
-        title: "Movie Render Queue",
-        content:
-            "Oubliez la capture d'écran classique. MRQ est le moteur de rendu professionnel qui permet d'exporter des images en 4K avec un anti-aliasing parfait.",
-      ),
-      const SideBySideModule(
-        id: '8_passes',
-        title: "Exporter des Passes (Render Layers)",
-        content:
-            "Pour les professionnels du compositing, on exporte souvent la 'Z-Depth' ou des 'Object IDs' pour pouvoir modifier le décor en post-production.",
-        imagePath: 'assets/images/render_passes.jpg',
-        layout: ContentLayout.textRight,
-      ),
-      const InfoModule(
-        id: '8_idea_finish',
+      InfoModule(
+        id: 'unreal_8_info',
         text:
-            "FÉLICITATIONS : Vous avez maintenant toutes les clés pour produire un contenu cinématographique de haute qualité sur Unreal Engine 5.",
-        type: InfoType.idea,
+            "Cette partie de la formation est actuellement en cours de développement. Elle sera disponible très prochainement dans une future mise à jour de l'application !",
+        type: InfoType.info,
       ),
     ],
   ),
