@@ -2,6 +2,20 @@
 
 Ce document regroupe l'historique des versions et les notes de mise à jour du projet **Training Toolkit** (Unreal Engine Workshop).
 
+
+## 🚀 Version 0.1.3 (20 mai 2026)
+Cette mise à jour apporte le contenu complet du Chapitre 3 ainsi que les ressources et images associées.
+
+### 🌟 Nouveautés & Contenu
+* **Chapitre 3 Activé & Complété** : "Shading & Maîtrise des Matériaux" est maintenant entièrement accessible avec ses 15 points de cours détaillés.
+* **Intégration des médias** : Ajout des schémas d'architecture et des captures d'illustration pour le chapitre 3.
+* **Mise à jour des ressources** : Ajout du lien vers le pack complet de textures PBR pour les exercices pratiques.
+* **Quiz interactif** : Validation des connaissances opérationnelles avec 4 questions interactives spécifiques.
+
+### ⚙️ Technique & Build
+* Montée de version à `0.1.3` (`pubspec.yaml` et `setup.iss`).
+* Préparation du script InnoSetup pour le déploiement.
+
 ---
 
 ## 🚀 Version 0.1.2 (19 mai 2026)

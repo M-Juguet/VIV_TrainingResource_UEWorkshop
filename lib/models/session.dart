@@ -127,7 +127,8 @@ class SessionModel {
     this.modules = const [],
   });
 
-  bool get isUnderConstruction => (id >= 101 && id <= 103) || (id >= 4 && id <= 8);
+  bool get isUnderConstruction =>
+      (id >= 101 && id <= 103) || (id >= 4 && id <= 8);
 }
 
 const List<SessionModel> basicsSessions = [
@@ -765,10 +766,7 @@ const List<SessionModel> unrealSessions = [
     filRouge:
         "Sculpture du relief principal et peuplement procédural de la scène pour accueillir les futurs éléments de décor.",
     modules: [
-      TitleModule(
-        id: '2_p1_title',
-        title: "Placement d'objets & Précision",
-      ),
+      TitleModule(id: '2_p1_title', title: "Placement d'objets & Précision"),
       InfoModule(
         id: '2_p1_obj',
         text:
@@ -1218,10 +1216,7 @@ const List<SessionModel> unrealSessions = [
         explanation:
             "La spline est un composant qui nécessite un acteur parent pour exister et interagir avec le monde.",
       ),
-      TitleModule(
-        id: '2_p6_title',
-        title: "Nanite (Théorie & Optimisation)",
-      ),
+      TitleModule(id: '2_p6_title', title: "Nanite (Théorie & Optimisation)"),
       InfoModule(
         id: '2_p6_obj',
         text:
@@ -1665,8 +1660,7 @@ const List<SessionModel> unrealSessions = [
             "La structuration logique de vos connexions est aussi importante que la justesse de vos calculs. Alignez vos alignements de nœuds et commentez vos blocs logiques pour accélérer le débogage.",
         imagePath: 'assets/images/organized_material_graph.png',
         layout: ContentLayout.textRight,
-        caption:
-            "Aperçu d'un graphe de production aéré, rangé et sectorisé",
+        caption: "Aperçu d'un graphe de production aéré, rangé et sectorisé",
       ),
       ListModule(
         id: '3_cleanliness_list',
@@ -1745,8 +1739,7 @@ const List<SessionModel> unrealSessions = [
       ListModule(
         id: '3_normals_list',
         title: "Différences et diagnostic",
-        intro:
-            "Apprenez à identifier le standard utilisé par votre texture :",
+        intro: "Apprenez à identifier le standard utilisé par votre texture :",
         items: [
           "DirectX : Le standard natif d'Unreal Engine. Le canal Vert (axe Y) simule une lumière orientée vers le bas",
           "OpenGL : Le standard utilisé par des logiciels comme Blender ou Unity. Le canal Vert pointe vers le haut",
@@ -1780,7 +1773,8 @@ const List<SessionModel> unrealSessions = [
       ListModule(
         id: '3_logic_list',
         title: "Fonctionnement mathématique et logique",
-        intro: "Voici comment le moteur interprète les données connectées au Lerp :",
+        intro:
+            "Voici comment le moteur interprète les données connectées au Lerp :",
         items: [
           "Entrée A : La couleur ou la texture qui apparaît là où le masque Alpha est totalement noir (valeur 0)",
           "Entrée B : La couleur ou la texture qui s'affiche là où le masque Alpha est totalement blanc (valeur 1)",
@@ -1887,10 +1881,7 @@ const List<SessionModel> unrealSessions = [
         outro:
             "C'est l'outil indispensable pour l'intégration d'assets de type mégastructures ou décors modulaires.",
       ),
-      TitleModule(
-        id: '3_panner',
-        title: "11. Animation de Matériaux (Panner)",
-      ),
+      TitleModule(id: '3_panner', title: "11. Animation de Matériaux (Panner)"),
       InfoModule(
         id: '3_panner_obj',
         text:
@@ -1997,8 +1988,7 @@ const List<SessionModel> unrealSessions = [
       ListModule(
         id: '3_parameters_list',
         title: "Les bonnes pratiques de structuration",
-        intro:
-            "Les bonnes pratiques de structuration :",
+        intro: "Les bonnes pratiques de structuration :",
         items: [
           "La catégorisation par Groupes : Dans les propriétés de chaque paramètre du Master Material, remplissez le champ Group. Utilisez des noms de catégories structurés avec un préfixe numérique (ex : \"01 - Base Color\", \"02 - Normal Map\", \"03 - Displacement\")",
           "La définition des priorités (Sort Priority) : Utilisez le champ \"Sort Priority\" pour ordonner précisément vos curseurs à l'intérieur d'un même groupe (les valeurs les plus petites apparaissent en haut de la liste).",
@@ -2025,8 +2015,7 @@ const List<SessionModel> unrealSessions = [
       ListModule(
         id: '3_application_list',
         title: "Les deux méthodes d'assignation",
-        intro:
-            "Choisissez la technique adaptée à votre situation de travail :",
+        intro: "Choisissez la technique adaptée à votre situation de travail :",
         items: [
           "Méthode Globale (Asset Level) : Ouvrez votre Static Mesh directement dans son éditeur dédié à partir du Content Browser. Glissez votre Material Instance dans le slot de matériau par défaut de l'objet. Ce maillage utilisera désormais ce matériau à chaque fois qu'il sera glissé dans n'importe quel niveau de votre projet",
           "Méthode Locale (Actor Level) : Glissez-déposez votre Material Instance directement sur l'un des objets placés dans votre scène (Viewport). Cette modification locale remplace temporairement le matériau par défaut uniquement pour cet acteur précis de votre niveau, sans modifier l'asset de base dans votre bibliothèque.",
@@ -2040,7 +2029,7 @@ const List<SessionModel> unrealSessions = [
         description: "pack_textures_pbr_shading_ue5.zip",
         fileName: "pack_textures_pbr_shading_ue5.zip",
         downloadUrl:
-            "https://drive.google.com/drive/folders/placeholder_textures_unreal_training_shading",
+            "https://drive.google.com/file/d/10yP38sR1nKS19caqNT-qtHSn8wQ-e4hf/view?usp=sharing",
       ),
       TitleModule(
         id: '3_quiz_validation',
@@ -2089,11 +2078,7 @@ const List<SessionModel> unrealSessions = [
         id: '3_quiz_4',
         question:
             "Quel nœud permet de faire défiler en continu une texture sur une surface pour simuler un fluide ou du vent ?",
-        options: [
-          "CustomRotator",
-          "World Aligned Texture",
-          "Panner",
-        ],
+        options: ["CustomRotator", "World Aligned Texture", "Panner"],
         correctIndices: [2],
         explanation:
             "Le nœud Panner applique un décalage continu des coordonnées de texture (UVs) en fonction du temps.",
