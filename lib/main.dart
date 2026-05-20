@@ -1,4 +1,3 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:window_manager/window_manager.dart';
@@ -154,8 +153,7 @@ class _WindowsMainScaffoldState extends State<WindowsMainScaffold> {
                                         alignment: Alignment.topCenter,
                                         children: <Widget>[
                                           ...previousChildren,
-                                          if (currentChild != null)
-                                            currentChild,
+                                          ?currentChild,
                                         ],
                                       );
                                     },
@@ -386,7 +384,7 @@ class _WindowsMainScaffoldState extends State<WindowsMainScaffold> {
     } else if (_selectedSessionIndex >= 0 &&
         _selectedSessionIndex < unrealSessions.length) {
       return SessionShowcaseView(
-        key: ValueKey('session_${_selectedSessionIndex}'),
+        key: ValueKey('session_$_selectedSessionIndex'),
         session: unrealSessions[_selectedSessionIndex],
         onImageTap: (path) => setState(() => _activeFullscreenImage = path),
         bookmarkedIds: _bookmarkedModuleIds,
@@ -414,7 +412,7 @@ class _WindowsMainScaffoldState extends State<WindowsMainScaffold> {
       );
     }
     return _PlaceholderHeroView(
-      key: ValueKey('placeholder_${_selectedSessionIndex}'),
+      key: ValueKey('placeholder_$_selectedSessionIndex'),
       icon: _selectedSessionIndex == -99 ? Icons.bookmark : Icons.settings,
       title: _selectedSessionIndex == -99 ? "Vos Signets" : "Paramètres",
       subtitle: "Cette section sera bientôt disponible.",
@@ -2331,14 +2329,68 @@ class ProgrammeView extends StatelessWidget {
       {
         'id': 3,
         'title': 'Shading & Maîtrise des Matériaux',
-        'objective': 'Donner l\'intention artistique à travers les surfaces.',
+        'objective':
+            'Comprendre l\'architecture des surfaces dans Unreal Engine 5 pour donner une intention artistique précise, optimisée et interactive à vos scènes.',
         'icon': Icons.texture_rounded,
-        'moduleId': '3_intro',
+        'moduleId': '3_ecosystem',
         'points': [
-          {'label': 'Master Materials vs Instances', 'id': '3_master'},
-          {'label': 'Effets Fresnel & Transparence', 'id': '3_tip_fresnel'},
-          {'label': 'Material Layers & Blending', 'id': '3_layers'},
-          {'label': 'Paramétrage dynamique', 'id': '3_quiz_instance'},
+          {
+            'label': 'L\'Écosystème des Matériaux (Master vs Instance)',
+            'id': '3_ecosystem',
+          },
+          {
+            'label': 'Anatomie d\'un Matériau (Le nœud de résultat)',
+            'id': '3_anatomy',
+          },
+          {
+            'label': 'Le Système Nodal & l\'Éditeur de Matériaux',
+            'id': '3_editor',
+          },
+          {
+            'label': 'Propreté et Lisibilité (Commentaires & Reroutes)',
+            'id': '3_cleanliness',
+          },
+          {
+            'label': 'Intégration et Gestion des Textures',
+            'id': '3_textures',
+          },
+          {
+            'label': 'Gestion des Normal Maps (DirectX vs OpenGL)',
+            'id': '3_normals',
+          },
+          {
+            'label': 'Logique et Mathématiques Visuelles (Lerp & Masques)',
+            'id': '3_logic',
+          },
+          {
+            'label': 'Effets Avancés de Surface (Fresnel & Émissif)',
+            'id': '3_effects',
+          },
+          {
+            'label': 'Coordonnées de Texture (UVs, Tiling et Rotation)',
+            'id': '3_coordinates',
+          },
+          {
+            'label': 'Projection Triplanaire (World Aligned)',
+            'id': '3_triplanar',
+          },
+          {'label': 'Animation de Matériaux (Panner)', 'id': '3_panner'},
+          {
+            'label': 'Displacement de Surface avec Nanite',
+            'id': '3_displacement',
+          },
+          {
+            'label': 'Modularité et Fonctions de Matériaux (Material Functions)',
+            'id': '3_functions',
+          },
+          {
+            'label': 'Exposition et Organisation des Paramètres (Groupes)',
+            'id': '3_parameters',
+          },
+          {
+            'label': 'Application Pratique sur le Terrain',
+            'id': '3_application',
+          },
         ],
       },
       {

@@ -127,7 +127,7 @@ class SessionModel {
     this.modules = const [],
   });
 
-  bool get isUnderConstruction => (id >= 101 && id <= 103) || (id >= 3 && id <= 8);
+  bool get isUnderConstruction => (id >= 101 && id <= 103) || (id >= 4 && id <= 8);
 }
 
 const List<SessionModel> basicsSessions = [
@@ -211,17 +211,17 @@ const List<SessionModel> unrealSessions = [
     filRouge:
         "Importation des premiers éléments du décor via Fab et configuration d'un étage USD pour le projet fil rouge.",
     modules: [
-      const TitleModule(
+      TitleModule(
         id: '1_title_p1',
         title: "Interface & Optimisation du Viewport",
       ),
-      const TextModule(
+      TextModule(
         id: '1_intro_pilotage',
         title: "L'Interface comme Poste de Pilotage",
         content:
             "Pour un artiste cinématique, l'interface n'est pas un simple cadre, c'est un poste de pilotage. Contrairement au développement de jeu, nous cherchons ici à maximiser la visibilité du Viewport tout en gardant un accès chirurgical aux outils de transformation et à la timeline. Une interface mal rangée est la première cause de friction créative.",
       ),
-      const SideBySideModule(
+      SideBySideModule(
         id: '1_anatomy',
         title: "Anatomie des Fenêtres Principales",
         content:
@@ -230,13 +230,13 @@ const List<SessionModel> unrealSessions = [
         caption: "Vue d'ensemble de l'interface standard d'Unreal Engine 5",
         layout: ContentLayout.textRight,
       ),
-      const InfoModule(
+      InfoModule(
         id: '1_content_browser_tip',
         text:
             "Vous pouvez invoquer le Content Browser à tout moment via Ctrl + Espace sans avoir à l'ancrer, libérant ainsi un espace visuel précieux.",
         type: InfoType.info,
       ),
-      const SideBySideModule(
+      SideBySideModule(
         id: '1_custom_layout',
         title: "Agencement et Sauvegarde de Layouts",
         content:
@@ -245,13 +245,13 @@ const List<SessionModel> unrealSessions = [
         caption: "Exemple de layout optimisé pour la mise en scène",
         layout: ContentLayout.textLeft,
       ),
-      const InfoModule(
+      InfoModule(
         id: '1_dual_screen_tip',
         text:
             "Si vous disposez de deux écrans, détachez le Sequencer et placez-le sur le second moniteur pour travailler sur un Viewport en plein écran sur votre écran principal.",
         type: InfoType.tip,
       ),
-      const ListModule(
+      ListModule(
         id: '1_nav_commands',
         title: "Commandes de Navigation",
         intro:
@@ -265,13 +265,13 @@ const List<SessionModel> unrealSessions = [
         outro:
             "Maîtriser ces touches est le premier pas vers la rapidité d'exécution.",
       ),
-      const InfoModule(
+      InfoModule(
         id: '1_focus_tip',
         text:
             "La touche F est votre meilleure alliie : elle réinitialise le pivot de rotation de votre caméra sur l'objet choisi, évitant ainsi que votre vue ne 'dérive' dans le vide.",
         type: InfoType.idea,
       ),
-      const SideBySideModule(
+      SideBySideModule(
         id: '1_pilot_mode',
         title: "Le Mode Pilotage (Pilot Actor)",
         content:
@@ -280,7 +280,7 @@ const List<SessionModel> unrealSessions = [
         caption: "Pilotage d'une Cine Camera pour un cadrage précis",
         layout: ContentLayout.textLeft,
       ),
-      const ListModule(
+      ListModule(
         id: '1_viz_modes',
         title: "Modes de Visualisation",
         intro: "Unreal propose différents modes pour analyser votre scène :",
@@ -293,25 +293,25 @@ const List<SessionModel> unrealSessions = [
         outro:
             "Utilisez la touche G fréquemment pour juger votre image sans pollution visuelle.",
       ),
-      const InfoModule(
+      InfoModule(
         id: '1_bookmarks_tip',
         text:
             "Utilisez les Bookmarks (Signets) : Ctrl + [0-9] mémorise la position de votre caméra. Appuyez sur le chiffre correspondant pour y revenir instantanément.",
         type: InfoType.tip,
       ),
-      const TextModule(
+      TextModule(
         id: '1_opti_viewport',
         title: "Optimisation du Viewport en Production",
         content:
             "Pour garder un éditeur fluide, même avec des milliers d'assets, il faut maîtriser la Scalability. Ces réglages (Low à Cinematic) affectent uniquement la qualité d'affichage dans l'éditeur, pas la qualité de votre rendu final. Réduire la qualité pendant le world building permet de garder une navigation fluide.",
       ),
-      const InfoModule(
+      InfoModule(
         id: '1_screen_perc_warning',
         text:
             "Un Screen Percentage supérieur à 100% dans les réglages de Scalability peut faire chuter vos performances sans gain réel durant la phase de construction.",
         type: InfoType.warning,
       ),
-      const SideBySideModule(
+      SideBySideModule(
         id: '1_realtime_toggle',
         title: "Performance et Realtime Toggle",
         content:
@@ -320,7 +320,7 @@ const List<SessionModel> unrealSessions = [
         caption: "Accès au menu de performance du Viewport",
         layout: ContentLayout.textRight,
       ),
-      const QuizModule(
+      QuizModule(
         id: '1_quiz_viewport',
         question:
             "Quel raccourci permet de masquer toutes les icônes d'aide (billboards) pour voir uniquement l'image finale ?",
@@ -329,17 +329,17 @@ const List<SessionModel> unrealSessions = [
         explanation:
             "La touche G (Game View) bascule entre le mode édition et le mode visionnage, masquant tout ce qui ne sera pas visible au rendu final (icônes de lumières, grilles, etc.).",
       ),
-      const TitleModule(
+      TitleModule(
         id: '1_title_p2',
         title: "Concepts & Asset Management (L'entrée des données)",
       ),
-      const TextModule(
+      TextModule(
         id: '1_p2_data_ue',
         title: "Comprendre la donnée dans Unreal",
         content:
             "Pour travailler efficacement, il faut d'abord comprendre comment Unreal Engine traite l'information. Contrairement à un logiciel de 3D classique où tout est stocké dans un seul fichier scène, Unreal fonctionne comme une base de données connectée. Chaque élément a un rôle précis et une méthode de stockage spécifique.",
       ),
-      const SideBySideModule(
+      SideBySideModule(
         id: '1_p2_asset_actor',
         title: "Concept 1 : Asset vs Actor",
         content:
@@ -349,13 +349,13 @@ const List<SessionModel> unrealSessions = [
         caption:
             "L'Asset est le \"moule\", l'Actor est le \"moulage\" dans le monde.",
       ),
-      const InfoModule(
+      InfoModule(
         id: '1_p2_ref_info',
         text:
             "On peut voir un Actor comme une référence légère à un Asset lourd. Cela permet de placer des milliers de rochers sans saturer la mémoire vive.",
         type: InfoType.info,
       ),
-      const ListModule(
+      ListModule(
         id: '1_p2_origin',
         title: "Concept 2 : Origine des Assets",
         intro: "Il existe deux types de fichiers dans votre projet :",
@@ -366,7 +366,7 @@ const List<SessionModel> unrealSessions = [
         outro:
             "La fonction Reimport est vitale pour les assets importés : elle permet de mettre à jour un modèle 3D tout en conservant ses réglages Unreal.",
       ),
-      const SideBySideModule(
+      SideBySideModule(
         id: '1_p2_fab',
         title: "L'Écosystème Fab",
         content:
@@ -375,25 +375,25 @@ const List<SessionModel> unrealSessions = [
         layout: ContentLayout.textLeft,
         caption: "La fenêtre Fab intégrée à l'éditeur",
       ),
-      const InfoModule(
+      InfoModule(
         id: '1_p2_fab_tip',
         text:
             "Dans Fab, privilégiez toujours le téléchargement des textures en \"Channel Packed\" (ORM) pour optimiser les performances de votre projet cinématique.",
         type: InfoType.tip,
       ),
-      const TextModule(
+      TextModule(
         id: '1_p2_nanite_import',
         title: "Importation Géométrique : FBX et Nanite",
         content:
             "Le format FBX reste le standard pour importer des objets isolés. Lors de l'import, Unreal utilise le système Interchange qui permet de gérer les collisions, les pivots et les matériaux. Pour les projets cinématiques, l'activation de Nanite à l'importation est une étape non négociable pour gérer des millions de polygones sans ralentissement.",
       ),
-      const InfoModule(
+      InfoModule(
         id: '1_p2_unit_warn',
         text:
             "Vérifiez toujours l'unité d'export de votre logiciel 3D (Maya/Blender) : 1 unité Unreal égale 1 centimètre. Un mauvais réglage peut rendre vos objets microscopiques ou gigantesques.",
         type: InfoType.warning,
       ),
-      const SideBySideModule(
+      SideBySideModule(
         id: '1_p2_usd',
         title: "Pipeline USD : Le Flux Non-Destructif",
         content:
@@ -403,25 +403,25 @@ const List<SessionModel> unrealSessions = [
         caption:
             "Utilisation du panneau USD Stage pour gérer des couches de scène",
       ),
-      const InfoModule(
+      InfoModule(
         id: '1_p2_usd_idea',
         text:
             "L'USD est idéal pour les environnements massifs. Il permet de charger des scènes entières sans alourdir votre dossier Content Browser avec des milliers de petits fichiers .uasset.",
         type: InfoType.idea,
       ),
-      const TextModule(
+      TextModule(
         id: '1_p2_alembic',
         title: "Alembic et Geometry Cache",
         content:
             "Pour les animations que les \"Rigs\" classiques ne peuvent pas gérer (simulations de fluides, tissus complexes, explosions), on utilise le format Alembic (.abc). Unreal importe ces données sous forme de Geometry Cache, permettant de lire des animations \"Vertex-per-frame\" avec une fidélité absolue.",
       ),
-      const InfoModule(
+      InfoModule(
         id: '1_p2_alembic_info',
         text:
             "L'importation d'un Alembic peut être lourde. Utilisez Nanite sur vos Geometry Caches pour maintenir une fluidité de lecture constante dans le Sequencer.",
         type: InfoType.info,
       ),
-      const SideBySideModule(
+      SideBySideModule(
         id: '1_p2_vt',
         title: "Préparation des Surfaces",
         content:
@@ -430,13 +430,13 @@ const List<SessionModel> unrealSessions = [
         layout: ContentLayout.textLeft,
         caption: "Paramétrage d'une texture en mode Virtual Texture",
       ),
-      const InfoModule(
+      InfoModule(
         id: '1_p2_import_warn',
         text:
             "Évitez de laisser Unreal générer automatiquement des matériaux lors de l'importation de fichiers FBX. Ces matériaux sont souvent basiques et polluent votre projet. Préférez l'application manuelle de vos propres Master Materials.",
         type: InfoType.warning,
       ),
-      const QuizModule(
+      QuizModule(
         id: '1_p2_quiz',
         question:
             "Quel est l'avantage principal de la fonction \"Reimport\" pour un asset FBX ?",
@@ -450,17 +450,17 @@ const List<SessionModel> unrealSessions = [
         explanation:
             "Le Reimport permet de lier la production externe (3D) au moteur sans casser le travail de mise en scène déjà effectué.",
       ),
-      const TitleModule(
+      TitleModule(
         id: '1_title_p3',
         title: "Organisation & Configuration du Projet",
       ),
-      const TextModule(
+      TextModule(
         id: '1_p3_hygiene',
         title: "L'Hygiène de Projet : Un Gain de Temps Invisible",
         content:
             "Dans une production professionnelle, l'organisation n'est pas une option, c'est une police d'assurance. Un projet mal structuré devient rapidement ingérable, provoque des erreurs de liens (broken links) et ralentit la collaboration. Cette section détaille comment transformer un projet \"bac à sable\" en un environnement de travail \"Production Ready\".",
       ),
-      const SideBySideModule(
+      SideBySideModule(
         id: '1_p3_maps_modes',
         title: "Configuration Globale : Maps & Modes",
         content:
@@ -470,13 +470,13 @@ const List<SessionModel> unrealSessions = [
         caption:
             "Configuration de la map de démarrage dans les Project Settings",
       ),
-      const InfoModule(
+      InfoModule(
         id: '1_p3_game_map_tip',
         text:
             "Pensez à configurer également la \"Game Default Map\" avec la même scène pour que vos exports de tests s'ouvrent directement sur le bon niveau.",
         type: InfoType.tip,
       ),
-      const ListModule(
+      ListModule(
         id: '1_p3_naming',
         title: "Nomenclature Standard (Naming Convention)",
         intro:
@@ -492,13 +492,13 @@ const List<SessionModel> unrealSessions = [
         outro:
             "Un asset bien nommé est un asset qui se trouve via une simple recherche textuelle.",
       ),
-      const InfoModule(
+      InfoModule(
         id: '1_p3_suffix_idea',
         text:
             "Pour les textures, utilisez des suffixes clairs en fin de nom : _BC (Base Color), _N (Normal Map) et _ORM (Occlusion/Roughness/Metallic) pour une lecture instantanée du rôle de l'image.",
         type: InfoType.idea,
       ),
-      const SideBySideModule(
+      SideBySideModule(
         id: '1_p3_structure',
         title: "Architecture \"Production Ready\"",
         content:
@@ -507,19 +507,19 @@ const List<SessionModel> unrealSessions = [
         layout: ContentLayout.textLeft,
         caption: "Exemple d'une hiérarchie de dossiers propre et isolée",
       ),
-      const InfoModule(
+      InfoModule(
         id: '1_p3_color_coding',
         text:
             "Activez le \"Color Coding\" (clic droit sur un dossier > Set Color) pour identifier visuellement vos dossiers les plus importants en un coup d'œil.",
         type: InfoType.info,
       ),
-      const TextModule(
+      TextModule(
         id: '1_p3_dependencies',
         title: "Maintenance et Gestion des Dépendances",
         content:
             "Au fil de la production, vous allez déplacer ou supprimer des fichiers. Unreal gère ces changements via des pointeurs invisibles appelés Redirectors. Si ces pointeurs s'accumulent sans être nettoyés, ils peuvent corrompre vos fichiers ou faire échouer vos futures migrations vers d'autres projets.",
       ),
-      const SideBySideModule(
+      SideBySideModule(
         id: '1_p3_redirectors',
         title: "Fix Up Redirectors",
         content:
@@ -528,13 +528,13 @@ const List<SessionModel> unrealSessions = [
         layout: ContentLayout.textRight,
         caption: "Nettoyage des liens après un déplacement de fichiers",
       ),
-      const InfoModule(
+      InfoModule(
         id: '1_p3_windows_warn',
         text:
             "Ne déplacez jamais vos fichiers Unreal directement via l'explorateur Windows (File Explorer). Faites-le uniquement depuis le Content Browser d'Unreal pour que le moteur puisse mettre à jour les références.",
         type: InfoType.warning,
       ),
-      const SideBySideModule(
+      SideBySideModule(
         id: '1_p3_ref_viewer',
         title: "Reference Viewer : Visualiser les Liens",
         content:
@@ -543,13 +543,13 @@ const List<SessionModel> unrealSessions = [
         layout: ContentLayout.textLeft,
         caption: "Visualisation des connexions entre les différents assets",
       ),
-      const InfoModule(
+      InfoModule(
         id: '1_p3_replace_idea',
         text:
             "Si vous devez supprimer un asset déjà utilisé dans la scène, utilisez l'option Replace References dans la fenêtre de suppression pour rediriger tous les acteurs vers un nouvel asset sans créer de trous dans votre décor.",
         type: InfoType.idea,
       ),
-      const QuizModule(
+      QuizModule(
         id: '1_p3_quiz',
         question:
             "Quel outil permet de nettoyer les liens \"fantômes\" créés après avoir déplacé des assets dans le Content Browser ?",
@@ -563,14 +563,14 @@ const List<SessionModel> unrealSessions = [
         explanation:
             "Fix Up Redirectors est l'outil indispensable pour maintenir l'intégrité des liens de votre projet.",
       ),
-      const TitleModule(id: '1_title_p4', title: "Gestion des Levels"),
-      const TextModule(
+      TitleModule(id: '1_title_p4', title: "Gestion des Levels"),
+      TextModule(
         id: '1_p4_segmentation',
         title: "Pourquoi segmenter sa scène ?",
         content:
             "Dans une production cinématique, travailler exclusivement dans le \"Persistent Level\" (le niveau racine) est une erreur stratégique. Segmenter votre scène en sous-niveaux permet de séparer les responsabilités (décor, lumière, animation), facilite la gestion des performances en masquant ce qui n'est pas nécessaire, et protège vos données contre les modifications accidentelles.",
       ),
-      const SideBySideModule(
+      SideBySideModule(
         id: '1_p4_persistent_vs_sub',
         title: "Persistent Level vs Sub-levels",
         content:
@@ -580,7 +580,7 @@ const List<SessionModel> unrealSessions = [
         caption:
             "Schéma de la relation entre le niveau maître et ses sous-niveaux",
       ),
-      const SideBySideModule(
+      SideBySideModule(
         id: '1_p4_levels_panel',
         title: "Le Panneau Levels & Current Level",
         content:
@@ -590,13 +590,13 @@ const List<SessionModel> unrealSessions = [
         caption:
             "Le panneau Levels montrant le niveau courant et les icônes de visibilité",
       ),
-      const InfoModule(
+      InfoModule(
         id: '1_p4_current_level_info',
         text:
             "Si vous placez un projecteur mais que vous ne le voyez pas dans votre liste d'objets attendue, vérifiez immédiatement quel est votre \"Current Level\".",
         type: InfoType.info,
       ),
-      const ListModule(
+      ListModule(
         id: '1_p4_layers_method',
         title: "Méthodologie de Calques de Production",
         intro:
@@ -610,13 +610,13 @@ const List<SessionModel> unrealSessions = [
         outro:
             "Cette séparation permet, par exemple, de tester trois éclairages différents sans jamais toucher à la position des rochers.",
       ),
-      const InfoModule(
+      InfoModule(
         id: '1_p4_lighting_scenario_idea',
         text:
             "Le mode Lighting Scenario est une option de sous-niveau permettant de stocker des données de lumière radicalement différentes (ex: Jour et Nuit) pour un même décor, sans alourdir la scène principale.",
         type: InfoType.idea,
       ),
-      const SideBySideModule(
+      SideBySideModule(
         id: '1_p4_transfer',
         title: "Transfert d'Actors et Verrouillage",
         content:
@@ -625,25 +625,25 @@ const List<SessionModel> unrealSessions = [
         layout: ContentLayout.textRight,
         caption: "Action de transfert d'acteurs entre deux niveaux",
       ),
-      const InfoModule(
+      InfoModule(
         id: '1_p4_hide_tip',
         text:
             "Masquez les niveaux sur lesquels vous ne travaillez pas (icône de l'œil) pour libérer de la mémoire vidéo et gagner en clarté visuelle dans votre composition.",
         type: InfoType.tip,
       ),
-      const TextModule(
+      TextModule(
         id: '1_p4_world_partition',
         title: "World Partition : La gestion des grands mondes",
         content:
             "Pour les environnements de grande envergure (Open World), Unreal Engine 5 utilise le World Partition. Au lieu de gérer manuellement des fichiers de niveaux, le moteur divise le monde en une grille et charge dynamiquement les cellules selon la position de la caméra. Bien que moins utilisé pour des courts-métrages de 30 secondes, c'est un concept fondamental à connaître pour les productions massives.",
       ),
-      const InfoModule(
+      InfoModule(
         id: '1_p4_partition_warn',
         text:
             "Le World Partition et le système de sous-niveaux classique ne font pas toujours bon ménage. Pour nos projets cinématiques, nous privilégions la gestion manuelle via le panneau Levels pour un contrôle total.",
         type: InfoType.warning,
       ),
-      const QuizModule(
+      QuizModule(
         id: '1_p4_quiz',
         question:
             "Comment appelle-t-on le niveau qui s'affiche en bleu gras dans le panneau Levels ?",
@@ -657,14 +657,14 @@ const List<SessionModel> unrealSessions = [
         explanation:
             "Le Current Level est le niveau dans lequel s'enregistrent toutes vos actions et créations actuelles.",
       ),
-      const TitleModule(id: '1_title_p5', title: "Migration & Sauvegarde"),
-      const TextModule(
+      TitleModule(id: '1_title_p5', title: "Migration & Sauvegarde"),
+      TextModule(
         id: '1_p5_safety',
         title: "La Sécurité des Données en Production",
         content:
             "Un crash, une corruption de fichier ou un asset perdu peuvent anéantir des jours de travail. Dans Unreal Engine, la sauvegarde ne se limite pas à presser \"Ctrl+S\". Il s'agit de comprendre comment le moteur lie les fichiers entre eux et comment extraire proprement ces données pour les partager ou les archiver.",
       ),
-      const SideBySideModule(
+      SideBySideModule(
         id: '1_p5_migrate',
         title: "L'Outil Migrate : Le Transfert Propre",
         content:
@@ -674,19 +674,19 @@ const List<SessionModel> unrealSessions = [
         caption:
             "Fenêtre de migration listant toutes les dépendances d'un asset",
       ),
-      const InfoModule(
+      InfoModule(
         id: '1_p5_path_info',
         text:
             "Lors d'une migration, Unreal conserve la structure des dossiers originale. Si votre asset était dans \"Content/Assets/Rocks\", il sera recréé exactement au même chemin dans le nouveau projet.",
         type: InfoType.info,
       ),
-      const InfoModule(
+      InfoModule(
         id: '1_p5_plugins_warn',
         text:
             "La migration ne transfère pas les réglages du projet ni les Plugins. Assurez-vous que le projet de destination possède les mêmes Plugins activés (ex: USD, Alembic) avant d'importer vos assets.",
         type: InfoType.warning,
       ),
-      const SideBySideModule(
+      SideBySideModule(
         id: '1_p5_size_map',
         title: "Audit et Nettoyage : La Size Map",
         content:
@@ -696,13 +696,13 @@ const List<SessionModel> unrealSessions = [
         caption:
             "Visualisation de l'empreinte mémoire des fichiers via la Size Map",
       ),
-      const InfoModule(
+      InfoModule(
         id: '1_p5_cleaning_idea',
         text:
             "Utilisez la Size Map pour \"faire le ménage\" avant une livraison. Supprimer les assets inutilisés (Unused Assets) permet d'alléger considérablement le poids final de vos archives.",
         type: InfoType.idea,
       ),
-      const ListModule(
+      ListModule(
         id: '1_p5_strategies',
         title: "Stratégies de Sauvegarde et Versioning",
         intro:
@@ -716,13 +716,13 @@ const List<SessionModel> unrealSessions = [
         outro:
             "Le versioning manuel des Maps est la méthode la plus simple pour revenir en arrière en cas d'erreur artistique.",
       ),
-      const InfoModule(
+      InfoModule(
         id: '1_p5_autosave_tip',
         text:
             "Configurez vos préférences d'Autosave dans Edit > Editor Preferences > Loading & Saving. Vous y trouverez également le dossier de récupération des fichiers en cas de crash (Saved/Autosaves).",
         type: InfoType.tip,
       ),
-      const SideBySideModule(
+      SideBySideModule(
         id: '1_p5_zip',
         title: "Archivage : Le Zip Project",
         content:
@@ -731,7 +731,7 @@ const List<SessionModel> unrealSessions = [
         layout: ContentLayout.textRight,
         caption: "Création d'une archive projet complète et sécurisée",
       ),
-      const QuizModule(
+      QuizModule(
         id: '1_p5_quiz',
         question:
             "Pourquoi l'outil \"Migrate\" est-il préférable à un copier-coller manuel dans Windows ?",
@@ -765,23 +765,23 @@ const List<SessionModel> unrealSessions = [
     filRouge:
         "Sculpture du relief principal et peuplement procédural de la scène pour accueillir les futurs éléments de décor.",
     modules: [
-      const TitleModule(
+      TitleModule(
         id: '2_p1_title',
         title: "Placement d'objets & Précision",
       ),
-      const InfoModule(
+      InfoModule(
         id: '2_p1_obj',
         text:
             "Agencer une scène avec exactitude en maîtrisant les outils de transformation et les systèmes d'aimantation (Snapping).",
         type: InfoType.objective,
       ),
-      const TextModule(
+      TextModule(
         id: '2_p1_blocking',
         title: "L'Art du Blocking",
         content:
             "Le placement d'objets est la première étape créative après l'importation. Un bon \"Block-out\" ne se contente pas de poser des objets : il définit l'échelle, la silhouette et la composition de votre futur plan cinématique. Pour gagner en efficacité, vous devez abandonner le placement \"à l'œil\" pour une approche mathématique et magnétique.",
       ),
-      const SideBySideModule(
+      SideBySideModule(
         id: '2_p1_gizmos',
         title: "Les Gizmos de Transformation",
         content:
@@ -791,7 +791,7 @@ const List<SessionModel> unrealSessions = [
             "Les manipulateurs de transformation et le code couleur des axes",
         layout: ContentLayout.textLeft,
       ),
-      const ListModule(
+      ListModule(
         id: '2_p1_shortcuts',
         title: "Raccourcis de Manipulation Rapide",
         intro: "Gagnez en vitesse avec ces commandes essentielles :",
@@ -804,13 +804,13 @@ const List<SessionModel> unrealSessions = [
         outro:
             "La duplication par Alt + Drag est la méthode la plus rapide pour peupler un décor répétitif.",
       ),
-      const InfoModule(
+      InfoModule(
         id: '2_p1_local_tip',
         text:
             "Le mode Local est indispensable lorsque vous voulez déplacer un objet selon son propre axe d'orientation (par exemple, faire glisser un tiroir ouvert de biais).",
         type: InfoType.info,
       ),
-      const SideBySideModule(
+      SideBySideModule(
         id: '2_p1_snapping',
         title: "Maîtriser le Snapping",
         content:
@@ -819,13 +819,13 @@ const List<SessionModel> unrealSessions = [
         caption: "Configuration de la grille et des incréments d'angles",
         layout: ContentLayout.textRight,
       ),
-      const InfoModule(
+      InfoModule(
         id: '2_p1_rot_tip',
         text:
             "Travaillez avec un Snap de rotation de 5° ou 10° par défaut. Cela garantit des alignements propres et évite les rotations \"parasites\" de 0.0001° qui compliquent la sélection.",
         type: InfoType.tip,
       ),
-      const SideBySideModule(
+      SideBySideModule(
         id: '2_p1_floor',
         title: "Snap to Floor (Touche Fin)",
         content:
@@ -834,19 +834,19 @@ const List<SessionModel> unrealSessions = [
         caption: "Utilisation de la touche End pour un placage immédiat au sol",
         layout: ContentLayout.textLeft,
       ),
-      const InfoModule(
+      InfoModule(
         id: '2_p1_pivot_warn',
         text:
             "Le \"Snap to Floor\" se base sur le Pivot Point de l'objet. Si votre objet s'enfonce dans le sol, c'est que son pivot est mal placé (souvent au centre géométrique au lieu de la base).",
         type: InfoType.warning,
       ),
-      const TextModule(
+      TextModule(
         id: '2_p1_pivots',
         title: "Gestion des Pivot Points",
         content:
             "Le pivot est le point d'ancrage de vos transformations. Unreal permet de le déplacer temporairement en maintenant Alt + Clic Milieu sur le Gizmo. Pour un changement permanent (indispensable pour les assets mal exportés), utilisez le mode Modeling (Shift + 5) > onglet XForm > Edit Pivot. Cela évite de devoir corriger le placement à chaque nouvelle instance.",
       ),
-      const QuizModule(
+      QuizModule(
         id: '2_p1_quiz',
         question:
             "Comment déplacer temporairement le pivot d'un objet pour effectuer une rotation spécifique ?",
@@ -860,20 +860,20 @@ const List<SessionModel> unrealSessions = [
         explanation:
             "Alt + Clic Milieu permet de décaler le pivot pour, par exemple, faire pivoter une porte autour de ses gonds.",
       ),
-      const TitleModule(id: '2_p2_title', title: "Landscape Tool (Sculpture)"),
-      const InfoModule(
+      TitleModule(id: '2_p2_title', title: "Landscape Tool (Sculpture)"),
+      InfoModule(
         id: '2_p2_obj',
         text:
             "Créer et sculpter une topographie naturelle réaliste en utilisant les outils de modelage d'Unreal Engine 5.",
         type: InfoType.objective,
       ),
-      const TextModule(
+      TextModule(
         id: '2_p2_foundation',
         title: "Le Terrain comme Fondation",
         content:
             "Le Landscape est un système de terrain hautement optimisé, capable de gérer des surfaces massives sans sacrifier les performances. Contrairement à un Static Mesh classique, il utilise un maillage dynamique qui ajuste sa précision selon la distance (LODs). Dans cette section, nous nous concentrons exclusivement sur la création de la forme et du volume de votre monde.",
       ),
-      const SideBySideModule(
+      SideBySideModule(
         id: '2_p2_creation',
         title: "Création et Résolution",
         content:
@@ -882,13 +882,13 @@ const List<SessionModel> unrealSessions = [
         caption: "Paramétrage technique de la grille du terrain",
         layout: ContentLayout.textLeft,
       ),
-      const InfoModule(
+      InfoModule(
         id: '2_p2_layers_info',
         text:
             "Activez systématiquement l'option Enable Edit Layers lors de la création. Cela vous permettra de travailler avec des calques de sculpture, à la manière de Photoshop, pour un flux de travail non-destructif.",
         type: InfoType.info,
       ),
-      const ListModule(
+      ListModule(
         id: '2_p2_sculpt_tools',
         title: "Les Outils de Modelage (Sculpt)",
         intro:
@@ -902,7 +902,7 @@ const List<SessionModel> unrealSessions = [
         outro:
             "Maintenez la touche B et déplacez la souris pour ajuster la taille de votre brosse dynamiquement.",
       ),
-      const SideBySideModule(
+      SideBySideModule(
         id: '2_p2_layers',
         title: "Sculpt Layers : La Sécurité Créative",
         content:
@@ -911,25 +911,25 @@ const List<SessionModel> unrealSessions = [
         caption: "Gestion de la pile de calques de sculpture",
         layout: ContentLayout.textRight,
       ),
-      const InfoModule(
+      InfoModule(
         id: '2_p2_erosion_idea',
         text:
             "L'outil Hydro Erosion est votre meilleur allié pour le réalisme : il creuse des sillons naturels simulant le passage de l'eau sur des millénaires, transformant une simple colline en un relief montagneux crédible.",
         type: InfoType.idea,
       ),
-      const InfoModule(
+      InfoModule(
         id: '2_p2_steep_warn',
         text:
             "Le Landscape supporte mal les pentes verticales à 90°. Cela provoque des étirements disgracieux du maillage. Pour des falaises abruptes, sculptez une pente douce et venez la masquer en plaçant des assets de rochers (Static Meshes) par-dessus.",
         type: InfoType.warning,
       ),
-      const TextModule(
+      TextModule(
         id: '2_p2_partition',
         title: "L'Importance du World Partition",
         content:
             "Pour les environnements de très grande envergure, le Landscape s'intègre au système de World Partition. Le moteur découpe alors automatiquement votre terrain en \"grilles\" qui se chargent et se déchargent selon la position de votre caméra, permettant de créer des mondes virtuellement illimités sans saturer la mémoire vive.",
       ),
-      const QuizModule(
+      QuizModule(
         id: '2_p2_quiz',
         question:
             "Quel outil de sculpture est le plus adapté pour créer une zone plane destinée à accueillir une structure ou un bâtiment ?",
@@ -938,20 +938,20 @@ const List<SessionModel> unrealSessions = [
         explanation:
             "L'outil Flatten permet de niveler le terrain à une altitude fixe, garantissant une base stable pour vos objets.",
       ),
-      const TitleModule(id: '2_p3_title', title: "Instances & Clones"),
-      const InfoModule(
+      TitleModule(id: '2_p3_title', title: "Instances & Clones"),
+      InfoModule(
         id: '2_p3_obj',
         text:
             "Comprendre la différence technique entre les Static Meshes et les instances pour optimiser radicalement la fluidité de vos scènes denses.",
         type: InfoType.objective,
       ),
-      const TextModule(
+      TextModule(
         id: '2_p3_repetition',
         title: "L'Enjeu de la Répétition",
         content:
             "Dans un décor cinématique, on utilise souvent des centaines, voire des milliers de fois le même objet (pierres, arbres, dalles). Si chaque copie est traitée comme un objet unique, le moteur de rendu s'épuise à envoyer des ordres individuels à la carte graphique. C'est ici qu'intervient la notion d'instanciation.",
       ),
-      const SideBySideModule(
+      SideBySideModule(
         id: '2_p3_sm_vs_ism',
         title: "Static Mesh vs Instanced Static Mesh",
         content:
@@ -961,13 +961,13 @@ const List<SessionModel> unrealSessions = [
             "Comparaison de la consommation mémoire entre copies uniques et instances",
         layout: ContentLayout.textLeft,
       ),
-      const InfoModule(
+      InfoModule(
         id: '2_p3_drawcall_info',
         text:
             "Chaque objet unique envoyé à la carte graphique génère ce qu'on appelle un Draw Call. Trop de Draw Calls font chuter vos FPS. L'instanciation permet de regrouper des milliers d'objets en un seul Draw Call.",
         type: InfoType.info,
       ),
-      const ListModule(
+      ListModule(
         id: '2_p3_benefits',
         title: "Les Avantages de l'Instanciation",
         intro: "Pourquoi privilégier les instances pour vos décors ?",
@@ -980,13 +980,13 @@ const List<SessionModel> unrealSessions = [
         outro:
             "Utiliser les instances est le secret des environnements riches qui restent fluides.",
       ),
-      const InfoModule(
+      InfoModule(
         id: '2_p3_merge_tip',
         text:
             "Pour transformer rapidement plusieurs Static Meshes identiques en instances, vous pouvez utiliser l'outil Merge Actors en mode \"Batch\" ou passer par le système de Foliage que nous verrons au point suivant.",
         type: InfoType.tip,
       ),
-      const SideBySideModule(
+      SideBySideModule(
         id: '2_p3_hierarchy',
         title: "Hiérarchie et Organisation",
         content:
@@ -995,19 +995,19 @@ const List<SessionModel> unrealSessions = [
         caption: "Structure d'un composant d'instance dans le panneau Details",
         layout: ContentLayout.textRight,
       ),
-      const InfoModule(
+      InfoModule(
         id: '2_p3_mat_warn',
         text:
             "Toutes les instances d'un groupe partagent obligatoirement le même Material. Si vous avez besoin qu'un rocher soit rouge et l'autre bleu, ils devront appartenir à deux groupes d'instances différents ou utiliser des \"Per-Instance Custom Data\".",
         type: InfoType.warning,
       ),
-      const InfoModule(
+      InfoModule(
         id: '2_p3_structure_idea',
         text:
             "L'instanciation est particulièrement efficace pour les éléments de structure (murs, piliers) et les petits débris au sol qui ne nécessitent pas d'interactions complexes.",
         type: InfoType.idea,
       ),
-      const QuizModule(
+      QuizModule(
         id: '2_p3_quiz',
         question:
             "Quel est le principal bénéfice technique de l'utilisation des Instanced Static Meshes (ISM) par rapport aux Static Meshes classiques ?",
@@ -1021,20 +1021,20 @@ const List<SessionModel> unrealSessions = [
         explanation:
             "En regroupant les objets identiques, le moteur réduit le nombre d'ordres individuels envoyés au GPU, ce qui booste les performances.",
       ),
-      const TitleModule(id: '2_p4_title', title: "Foliage Tool"),
-      const InfoModule(
+      TitleModule(id: '2_p4_title', title: "Foliage Tool"),
+      InfoModule(
         id: '2_p4_obj',
         text:
             "Utiliser les outils de peinture de végétation pour créer des écosystèmes organiques denses et optimisés.",
         type: InfoType.objective,
       ),
-      const TextModule(
+      TextModule(
         id: '2_p4_nature',
         title: "Peindre la Nature",
         content:
             "Le Foliage Tool est l'outil de prédilection pour peupler rapidement de vastes zones avec des milliers d'objets. Techniquement, il s'appuie sur le système d'instanciation (ISM) : il permet de \"peindre\" des forêts ou des prairies entières tout en conservant une fluidité de rendu exceptionnelle.",
       ),
-      const SideBySideModule(
+      SideBySideModule(
         id: '2_p4_ui',
         title: "L'Interface et les Assets de Foliage",
         content:
@@ -1044,13 +1044,13 @@ const List<SessionModel> unrealSessions = [
             "Dépôt d'assets et création automatique des Static Mesh Foliage",
         layout: ContentLayout.textLeft,
       ),
-      const InfoModule(
+      InfoModule(
         id: '2_p4_indep_info',
         text:
             "Chaque asset de type Static Mesh Foliage est indépendant. Cela signifie que vous pouvez régler une densité très élevée pour votre herbe tout en gardant un espacement large pour vos arbres au sein du même outil.",
         type: InfoType.info,
       ),
-      const ListModule(
+      ListModule(
         id: '2_p4_brush',
         title: "Paramètres du Pinceau (Brush)",
         intro:
@@ -1064,7 +1064,7 @@ const List<SessionModel> unrealSessions = [
         outro:
             "Travaillez par touches légères pour éviter les amas d'objets peu naturels.",
       ),
-      const SideBySideModule(
+      SideBySideModule(
         id: '2_p4_random',
         title: "Randomisation et Règles de Pose",
         content:
@@ -1074,25 +1074,25 @@ const List<SessionModel> unrealSessions = [
             "Configuration des variations organiques dans l'asset de foliage",
         layout: ContentLayout.textRight,
       ),
-      const InfoModule(
+      InfoModule(
         id: '2_p4_normal_tip',
         text:
             "Activez l'option Align to Normal pour que vos plantes suivent l'inclinaison du terrain, ou désactivez-la pour forcer vos arbres à pousser toujours vers le haut, indépendamment de la pente.",
         type: InfoType.tip,
       ),
-      const InfoModule(
+      InfoModule(
         id: '2_p4_culling_warn',
         text:
             "La densité excessive est l'ennemi de la performance. Utilisez systématiquement la Cull Distance (Distance d'affichage) dans les réglages de l'asset. Cela permet de faire disparaître progressivement la végétation lointaine pour soulager votre carte graphique.",
         type: InfoType.warning,
       ),
-      const InfoModule(
+      InfoModule(
         id: '2_p4_reapply_idea',
         text:
             "Si vous changez les règles de génération dans votre asset de foliage, utilisez l'outil Reapply pour mettre à jour instantanément les instances déjà peintes dans votre scène.",
         type: InfoType.idea,
       ),
-      const SideBySideModule(
+      SideBySideModule(
         id: '2_p4_geometry',
         title: "Peindre sur des Géométries",
         content:
@@ -1101,7 +1101,7 @@ const List<SessionModel> unrealSessions = [
         caption: "Application de végétation sur des surfaces verticales",
         layout: ContentLayout.textLeft,
       ),
-      const QuizModule(
+      QuizModule(
         id: '2_p4_quiz',
         question:
             "Où sont stockées les règles spécifiques de densité et d'échelle pour un élément de végétation ?",
@@ -1115,23 +1115,23 @@ const List<SessionModel> unrealSessions = [
         explanation:
             "L'asset Static Mesh Foliage sert de \"cerveau\" à l'outil pour savoir comment chaque plante doit être distribuée.",
       ),
-      const TitleModule(
+      TitleModule(
         id: '2_p5_title',
         title: "Spline Meshes & Outils Curvilignes",
       ),
-      const InfoModule(
+      InfoModule(
         id: '2_p5_obj',
         text:
             "Maîtriser l'utilisation des courbes de spline au sein d'un Blueprint Actor pour placer et déformer des assets le long d'un tracé complexe.",
         type: InfoType.objective,
       ),
-      const TextModule(
+      TextModule(
         id: '2_p5_curve',
         title: "La Géométrie de la Courbe",
         content:
             "Dans Unreal Engine, une Spline est une ligne mathématique invisible composée de points de contrôle. Pour l'utiliser, elle doit être intégrée dans un Blueprint Actor (un objet programmable). C'est ce conteneur qui permet d'afficher la courbe dans le Viewport et de lui donner une fonction concrète, comme générer des rails ou des câbles électriques qui suivent un tracé sinueux.",
       ),
-      const SideBySideModule(
+      SideBySideModule(
         id: '2_p5_actor',
         title: "Le Blueprint comme Conteneur",
         content:
@@ -1141,13 +1141,13 @@ const List<SessionModel> unrealSessions = [
             "Sélection du composant Spline à l'intérieur d'un Blueprint Actor",
         layout: ContentLayout.textLeft,
       ),
-      const InfoModule(
+      InfoModule(
         id: '2_p5_script_info',
         text:
             "Le \"cerveau\" de cet outil se trouve dans le Construction Script du Blueprint. Sans entrer dans le code, sachez que c'est ici que l'on définit si le mesh doit s'étirer ou se répéter le long de la ligne.",
         type: InfoType.info,
       ),
-      const SideBySideModule(
+      SideBySideModule(
         id: '2_p5_anatomy',
         title: "Anatomie et Manipulation",
         content:
@@ -1157,7 +1157,7 @@ const List<SessionModel> unrealSessions = [
             "Manipulation des points de contrôle et des tangentes dans le Viewport",
         layout: ContentLayout.textRight,
       ),
-      const ListModule(
+      ListModule(
         id: '2_p5_cases',
         title: "Cas d'usage en Production",
         intro:
@@ -1170,7 +1170,7 @@ const List<SessionModel> unrealSessions = [
         outro:
             "La spline garantit une continuité parfaite sans \"trous\" entre les segments de géométrie.",
       ),
-      const SideBySideModule(
+      SideBySideModule(
         id: '2_p5_stretch',
         title: "Stretch vs Repeat",
         content:
@@ -1180,31 +1180,31 @@ const List<SessionModel> unrealSessions = [
             "Différence entre un mesh étiré et un mesh répété sur une courbe",
         layout: ContentLayout.textLeft,
       ),
-      const InfoModule(
+      InfoModule(
         id: '2_p5_axis_tip',
         text:
             "Si votre mesh semble tordu, vérifiez le paramètre Forward Axis dans les détails de votre acteur. Il définit quel axe de votre objet (X, Y ou Z) doit pointer vers le point suivant de la courbe.",
         type: InfoType.tip,
       ),
-      const InfoModule(
+      InfoModule(
         id: '2_p5_artifact_warn',
         text:
             "Une spline trop tortueuse sur un mesh très complexe peut créer des artefacts visuels (étirements bizarres). Privilégiez des assets avec un maillage bien réparti pour les courbes serrées.",
         type: InfoType.warning,
       ),
-      const InfoModule(
+      InfoModule(
         id: '2_p5_camera_idea',
         text:
             "En plus de la géométrie, vous pouvez transformer une spline en chemin de caméra ! C'est une méthode parfaite pour créer des travellings complexes et ultra-fluides.",
         type: InfoType.idea,
       ),
-      const TextModule(
+      TextModule(
         id: '2_p5_pcg_intro',
         title: "Ouverture : Splines et Génération Procédurale (PCG)",
         content:
             "Bien que nous utilisions ici les splines manuellement, sachez qu'elles deviennent surpuissantes lorsqu'elles servent de guides au PCG (Procedural Content Generation). Une spline peut définir une \"zone d'influence\" : par exemple, vous dessinez un sentier, et le système PCG se charge de supprimer automatiquement les arbres et de placer des petits cailloux uniquement le long de cette ligne.",
       ),
-      const QuizModule(
+      QuizModule(
         id: '2_p5_quiz',
         question:
             "Quel est l'élément indispensable pour pouvoir manipuler et éditer une spline dans le Viewport d'Unreal ?",
@@ -1218,23 +1218,23 @@ const List<SessionModel> unrealSessions = [
         explanation:
             "La spline est un composant qui nécessite un acteur parent pour exister et interagir avec le monde.",
       ),
-      const TitleModule(
+      TitleModule(
         id: '2_p6_title',
         title: "Nanite (Théorie & Optimisation)",
       ),
-      const InfoModule(
+      InfoModule(
         id: '2_p6_obj',
         text:
             "Comprendre la technologie de virtualisation de géométrie pour lever les limites de polygones et optimiser vos scènes cinématiques.",
         type: InfoType.objective,
       ),
-      const TextModule(
+      TextModule(
         id: '2_p6_rev',
         title: "La Révolution de la Géométrie Virtualisée",
         content:
             "Avant Unreal Engine 5, chaque polygone affiché à l'écran coûtait de la performance. Les artistes devaient passer des heures à créer des versions simplifiées de leurs modèles (LODs). Nanite change la donne en traitant la géométrie comme une texture : il n'affiche que le nombre de détails nécessaires pour chaque pixel de votre écran, permettant d'utiliser des assets de plusieurs millions de polygones sans ralentissement.",
       ),
-      const SideBySideModule(
+      SideBySideModule(
         id: '2_p6_clusters',
         title: "Comment fonctionne Nanite ?",
         content:
@@ -1243,13 +1243,13 @@ const List<SessionModel> unrealSessions = [
         caption: "Visualisation des clusters Nanite s'adaptant à la distance",
         layout: ContentLayout.textLeft,
       ),
-      const InfoModule(
+      InfoModule(
         id: '2_p6_limit_info',
         text:
             "Avec Nanite, la limite n'est plus le nombre de polygones affichés à l'écran, mais souvent la vitesse de votre disque dur (pour charger les données) et la mémoire vidéo (VRAM).",
         type: InfoType.info,
       ),
-      const ListModule(
+      ListModule(
         id: '2_p6_when',
         title: "Quand activer Nanite ?",
         intro:
@@ -1261,7 +1261,7 @@ const List<SessionModel> unrealSessions = [
         outro:
             "Activer Nanite sur un simple cube de 6 faces peut paradoxalement consommer plus de ressources qu'un Static Mesh classique.",
       ),
-      const SideBySideModule(
+      SideBySideModule(
         id: '2_p6_enable',
         title: "Activation et Conversion",
         content:
@@ -1270,19 +1270,19 @@ const List<SessionModel> unrealSessions = [
         caption: "Menu contextuel pour activer Nanite sur un asset existant",
         layout: ContentLayout.textRight,
       ),
-      const InfoModule(
+      InfoModule(
         id: '2_p6_viz_tip',
         text:
             "Utilisez le mode de visualisation Nanite > Visualization > Triangles dans le Viewport pour vérifier si vos objets sont bien pris en charge. Si vous voyez des triangles colorés, Nanite est actif.",
         type: InfoType.tip,
       ),
-      const InfoModule(
+      InfoModule(
         id: '2_p6_size_warn',
         text:
             "Un asset Nanite pèse plus lourd sur votre disque dur qu'un asset classique. C'est le prix à payer pour ne plus avoir à gérer les LODs manuellement. Surveillez l'espace disque de votre projet lors de l'utilisation massive de Megascans 8K.",
         type: InfoType.warning,
       ),
-      const SideBySideModule(
+      SideBySideModule(
         id: '2_p6_foliage',
         title: "Nanite et le Foliage",
         content:
@@ -1291,13 +1291,13 @@ const List<SessionModel> unrealSessions = [
         caption: "Rendu de végétation haute densité grâce à Nanite",
         layout: ContentLayout.textLeft,
       ),
-      const InfoModule(
+      InfoModule(
         id: '2_p6_macro_idea',
         text:
             "Si vous travaillez sur une cinématique de très près (Macro), Nanite est indispensable pour éviter de voir les \"facettes\" des polygones sur vos objets, garantissant une silhouette parfaitement lisse.",
         type: InfoType.idea,
       ),
-      const QuizModule(
+      QuizModule(
         id: '2_p6_quiz',
         question:
             "Quel est le principal avantage de Nanite pour un artiste 3D ?",
@@ -1311,20 +1311,20 @@ const List<SessionModel> unrealSessions = [
         explanation:
             "Nanite gère dynamiquement la complexité géométrique, permettant d'utiliser des modèles haute résolution directement en production.",
       ),
-      const TitleModule(id: '2_p7_title', title: "Introduction au PCG"),
-      const InfoModule(
+      TitleModule(id: '2_p7_title', title: "Introduction au PCG"),
+      InfoModule(
         id: '2_p7_obj',
         text:
             "Apprendre à utiliser les outils de génération procédurale pour peupler vos environnements et comprendre pourquoi le PCG représente l'avenir du World Building.",
         type: InfoType.objective,
       ),
-      const TextModule(
+      TextModule(
         id: '2_p7_evol',
         title: "L'Évolution du World Building",
         content:
             "Le PCG (Procedural Content Generation) marque une rupture technologique majeure. Jusqu'ici, nous placions des objets à la main ou le long de tracés (Splines). Avec le PCG, nous passons à une \"architecture de règles\". Au lieu de manipuler des objets, vous manipulez une logique qui décide où, comment et en quelle quantité les éléments doivent apparaître.",
       ),
-      const SideBySideModule(
+      SideBySideModule(
         id: '2_p7_graph',
         title: "Le PCG Graph : Le Cerveau du Système",
         content:
@@ -1334,7 +1334,7 @@ const List<SessionModel> unrealSessions = [
             "Interface de programmation visuelle pour la génération de contenu",
         layout: ContentLayout.textLeft,
       ),
-      const SideBySideModule(
+      SideBySideModule(
         id: '2_p7_perf',
         title: "Spline Mesh vs PCG : Le Saut de Performance",
         content:
@@ -1344,7 +1344,7 @@ const List<SessionModel> unrealSessions = [
             "Comparaison entre le placement linéaire par spline et la distribution intelligente PCG",
         layout: ContentLayout.textRight,
       ),
-      const ListModule(
+      ListModule(
         id: '2_p7_future',
         title: "Pourquoi le PCG est l'Avenir ?",
         intro:
@@ -1358,13 +1358,13 @@ const List<SessionModel> unrealSessions = [
         outro:
             "Là où la Spline est un outil de tracé, le PCG est un écosystème complet.",
       ),
-      const InfoModule(
+      InfoModule(
         id: '2_p7_spline_info',
         text:
             "La Spline ne disparaît pas pour autant ! Dans un workflow moderne, on utilise souvent une Spline comme entrée pour un graphe PCG. Elle peut tracer un chemin linéaire, mais aussi définir des aires de génération précises.",
         type: InfoType.info,
       ),
-      const SideBySideModule(
+      SideBySideModule(
         id: '2_p7_volume',
         title: "Le PCG Volume et le Sampling",
         content:
@@ -1373,25 +1373,25 @@ const List<SessionModel> unrealSessions = [
         caption: "Visualisation des points de calcul du PCG sur le Landscape",
         layout: ContentLayout.textLeft,
       ),
-      const InfoModule(
+      InfoModule(
         id: '2_p7_noise_tip',
         text:
             "Pour un rendu naturel, utilisez toujours un nœud de Density Noise dans votre graphe. Cela permet de créer des clairières et des zones denses de manière aléatoire, évitant l'aspect \"grille\" trop parfait.",
         type: InfoType.tip,
       ),
-      const InfoModule(
+      InfoModule(
         id: '2_p7_debug_warn',
         text:
             "Le PCG est puissant mais demande de la rigueur. Un graphe mal optimisé qui génère trop de points peut ralentir l'éditeur. Utilisez le mode Debug pour voir vos points de génération avant de charger des meshes lourds.",
         type: InfoType.warning,
       ),
-      const InfoModule(
+      InfoModule(
         id: '2_p7_brush_idea',
         text:
             "Imaginez le PCG comme un pinceau intelligent : au lieu de peindre chaque brin d'herbe, vous définissez les règles de croissance de toute une forêt.",
         type: InfoType.idea,
       ),
-      const QuizModule(
+      QuizModule(
         id: '2_p7_quiz',
         question:
             "Pourquoi l'utilisation du PCG est-elle généralement plus performante que celle des Spline Meshes pour peupler de grandes zones ?",
@@ -1405,25 +1405,25 @@ const List<SessionModel> unrealSessions = [
         explanation:
             "L'instanciation pure du PCG est beaucoup plus légère pour le GPU que la déformation de maillage requise par les Spline Meshes.",
       ),
-      const TitleModule(id: '2_ex_title', title: "Création d'un Micro-Biome"),
-      const InfoModule(
+      TitleModule(id: '2_ex_title', title: "Création d'un Micro-Biome"),
+      InfoModule(
         id: '2_ex_obj',
         text:
             "Valider les acquis sur le World Building en créant une scène optimisée combinant sculpture, outils curvilignes et génération procédurale.",
         type: InfoType.objective,
       ),
-      const InfoModule(
+      InfoModule(
         id: '2_ex_duration',
         text: "Durée estimée : 40 minutes",
         type: InfoType.info,
       ),
-      const TextModule(
+      TextModule(
         id: '2_ex_consigne',
         title: "Consigne Générale",
         content:
             "Vous devez créer une petite scène d'environ 50 mètres carrés représentant un \"sentier sauvage\". L'enjeu est de démontrer votre capacité à utiliser les outils automatiques (PCG, Foliage) pour habiller un relief sculpté manuellement, tout en garantissant des performances optimales via Nanite.",
       ),
-      const ListModule(
+      ListModule(
         id: '2_ex_step1',
         title: "Étape 1 : Fondation et Sculpture (10 min)",
         intro: "Commencez par poser la base de votre monde :",
@@ -1434,7 +1434,7 @@ const List<SessionModel> unrealSessions = [
         ],
         outro: "Objectif : Maîtriser le relief sans aborder les matériaux.",
       ),
-      const ListModule(
+      ListModule(
         id: '2_ex_step2',
         title: "Étape 2 : Structure et Précision (5 min)",
         intro: "Placez les éléments \"héros\" de votre scène :",
@@ -1445,7 +1445,7 @@ const List<SessionModel> unrealSessions = [
         ],
         outro: "Objectif : Précision du blocage.",
       ),
-      const ListModule(
+      ListModule(
         id: '2_ex_step3',
         title: "Étape 3 : Optimisation Nanite (5 min)",
         intro: "Assurez-vous que votre scène est \"Next-Gen ready\" :",
@@ -1456,7 +1456,7 @@ const List<SessionModel> unrealSessions = [
         ],
         outro: "Objectif : Compréhension de la performance.",
       ),
-      const ListModule(
+      ListModule(
         id: '2_ex_step4',
         title: "Étape 4 : Éléments Curvilignes (5 min)",
         intro: "Tracez la direction de votre scène :",
@@ -1466,7 +1466,7 @@ const List<SessionModel> unrealSessions = [
         ],
         outro: "Objectif : Utilisation des outils de tracé.",
       ),
-      const ListModule(
+      ListModule(
         id: '2_ex_step5',
         title: "Étape 5 : Le Système PCG (10 min)",
         intro: "Automatisez le remplissage de votre zone :",
@@ -1478,7 +1478,7 @@ const List<SessionModel> unrealSessions = [
         ],
         outro: "Objectif : Mise en pratique simple de la logique procédurale.",
       ),
-      const ListModule(
+      ListModule(
         id: '2_ex_step6',
         title: "Étape 6 : Finition au Foliage (5 min)",
         intro: "Apportez la touche finale organique :",
@@ -1488,13 +1488,13 @@ const List<SessionModel> unrealSessions = [
         ],
         outro: "Objectif : Complémentarité entre manuel et automatique.",
       ),
-      const InfoModule(
+      InfoModule(
         id: '2_ex_pcg_tip',
         text:
             "Pour le PCG, ne cherchez pas la complexité. Un simple \"Surface Sampler\" connecté à un \"Transform Points\" (pour la rotation) puis à un \"Static Mesh Spawner\" suffit pour valider l'exercice.",
         type: InfoType.info,
       ),
-      const QuizModule(
+      QuizModule(
         id: '2_ex_quiz',
         question:
             "Quel outil devriez-vous utiliser pour peupler instantanément 1 km² de forêt avec des règles de collision ?",
@@ -1513,21 +1513,590 @@ const List<SessionModel> unrealSessions = [
   SessionModel(
     id: 3,
     title: 'Shading & Maîtrise des Matériaux',
-    objective: "Donner l'intention artistique à travers les surfaces.",
+    objective:
+        "Comprendre l'architecture des surfaces dans Unreal Engine 5 pour donner une intention artistique précise, optimisée et interactive à vos scènes.",
     icon: Icons.texture_rounded,
     technicalPoints: [
-      "Master Materials",
-      "Lumen setup",
-      "Material Layers",
-      "Animation",
+      "L'Écosystème des Matériaux (Master vs Instance)",
+      "Anatomie d'un Matériau (Le nœud de résultat)",
+      "Le Système Nodal & l'Éditeur de Matériaux",
+      "Propreté et Lisibilité du Graphe (Commentaires & Reroutes)",
+      "Intégration et Gestion des Textures",
+      "Gestion des Normal Maps (DirectX vs OpenGL)",
+      "Logique et Mathématiques Visuelles (Lerp & Masques)",
+      "Effets Avancés de Surface (Fresnel & Émissif)",
+      "Coordonnées de Texture (UVs, Tiling et Rotation)",
+      "Projection Triplanaire (World Aligned)",
+      "Animation de Matériaux (Panner)",
+      "Displacement de Surface avec Nanite",
+      "Modularité et Fonctions de Matériaux (Material Functions)",
+      "Exposition et Organisation des Paramètres (Groupes)",
+      "Application Pratique sur le Terrain",
     ],
-    filRouge: "Créer un 'Master Material' paramétrable.",
+    filRouge:
+        "Concevoir le matériau maître d'exploration de notre scène, optimiser et intégrer ses textures ORM et ses Normal Maps, implémenter une projection triplanaire animée, et organiser l'interface d'instance pour habiller dynamiquement nos décors (roche, métal et feuillage).",
     modules: [
+      TitleModule(
+        id: '3_ecosystem',
+        title: "1. L'Écosystème des Matériaux (Master vs Instance)",
+      ),
       InfoModule(
-        id: 'unreal_3_info',
+        id: '3_ecosystem_obj',
         text:
-            "Cette partie de la formation est actuellement en cours de développement. Elle sera disponible très prochainement dans une future mise à jour de l'application !",
+            "Adopter une philosophie de travail non-destructive et optimisée grâce au couple Master / Instance.",
+        type: InfoType.objective,
+      ),
+      TextModule(
+        id: '3_ecosystem_text',
+        title: "La philosophie du workflow non-destructif",
+        content:
+            "Dans Unreal Engine, la création d'un matériau nécessite une phase de compilation lourde : le moteur traduit vos nœuds graphiques en code HLSL (High-Level Shader Language) lisible par la carte graphique. Compiler un matériau à chaque modification ralentit considérablement la production et surcharge la mémoire.\nPour contourner cette limite, les professionnels utilisent une architecture parent-enfant : un Master Material (Matériau Maître) unique pilote la logique mathématique, tandis que ses Material Instances (Instances) adaptent les propriétés visuelles en temps réel sans aucune phase de recompilation.",
+      ),
+      SideBySideModule(
+        id: '3_ecosystem_sbs',
+        title: "Architecture Parent-Enfant",
+        content:
+            "Le Master Material (M_) concentre toute la complexité technique (calculs de coordonnées, masques, logique de rendu) et expose des variables sous forme de paramètres. Le Material Instance (MI_) hérite de cette logique et permet à l'artiste de modifier instantanément les textures, couleurs ou valeurs numériques depuis une interface simplifiée.",
+        imagePath: 'assets/images/master_instance_architecture.png',
+        layout: ContentLayout.textLeft,
+        caption:
+            "Schéma fonctionnel du transfert de logique du Master (M_) vers l'Instance (MI_)",
+      ),
+      ListModule(
+        id: '3_ecosystem_list',
+        title: "Les Règles d'Or de l'Écosystème",
+        intro:
+            "Mettre en place de bonnes habitudes de nommage et de structure dès le début du projet :",
+        items: [
+          "Préfixe M_ : Identifie vos matériaux maîtres (ex : M_Surface_Master)",
+          "Préfixe MI_ : Identifie vos instances (ex : MI_Rock_Cliff)",
+          "Exposition systématique : Convertissez toute valeur sujette à modification en paramètre modifiable (couleur, rugosité, échelle)",
+          "Principe de spécialisation : Ne créez pas un seul matériau maître universel géant. Séparez vos maîtres par grandes catégories physiques (ex : Opaque, Translucide/Verre, Feuillage, Eau)",
+        ],
+        outro:
+            "Ce fonctionnement garantit un taux de rafraîchissement élevé (FPS) lors du développement de votre jeu.",
+      ),
+      InfoModule(
+        id: '3_ecosystem_tip',
+        text:
+            "Pour transformer instantanément une valeur fixe en paramètre modifiable, faites un clic droit sur le nœud concerné dans le graphe (ex: un nœud Constant ou Constant3Vector) et cliquez sur Convert to Parameter.",
+        type: InfoType.tip,
+      ),
+      TitleModule(
+        id: '3_anatomy',
+        title: "2. Anatomie d'un Matériau (Le Nœud de Résultat)",
+      ),
+      InfoModule(
+        id: '3_anatomy_obj',
+        text:
+            "Décoder les canaux d'entrée du nœud principal et configurer la carte d'identité globale d'une surface.",
+        type: InfoType.objective,
+      ),
+      TextModule(
+        id: '3_anatomy_text',
+        title: "Configurer la carte d'identité de votre shader",
+        content:
+            "Lorsque vous créez un nouveau matériau, un nœud imposant trône au centre de votre graphe. C'est le Nœud de Résultat Final. Avant d'y connecter la moindre texture, vous devez configurer le comportement de votre shader dans le panneau Details à gauche.",
+      ),
+      ListModule(
+        id: '3_anatomy_list',
+        title: "Paramètres globaux du panneau Details",
+        intro:
+            "Ces réglages modifient directement les canaux d'entrée actifs sur votre nœud de résultat :",
+        items: [
+          "Material Domain : Détermine la destination finale du matériau. \"Surface\" est réservé aux objets 3D du monde, \"User Interface\" sert au HUD et aux menus, et \"Post Process\" s'applique aux effets de caméra globaux",
+          "Blend Mode : Gère la transparence. Utilisez \"Opaque\" pour les éléments pleins (pierre, bois), \"Masked\" pour le tout-ou-rien (grillage, feuillage via un masque binaire), et \"Translucent\" pour la transparence graduelle (verre, eau)",
+          "Shading Model : Définit la réaction physique à la lumière. \"Default Lit\" est le modèle physique standard (PBR). \"Unlit\" annule l'ombrage (idéal pour les interfaces ou les effets de néons). \"Subsurface\" simule la pénétration lumineuse à l'intérieur de l'objet (peau, cire, feuilles d'arbres)",
+          "Two-Sided : Permet de rendre le matériau visible sur les deux côtés d'un polygone. Indispensable pour éviter que l'arrière des plantes ou des tissus ne disparaisse à l'écran",
+          "Refraction Method : Détermine la technique de déviation optique pour les surfaces translucides afin de simuler l'indice de réfraction réel (IOR)",
+        ],
+        outro:
+            "Modifier ces caractéristiques structurelles change dynamiquement la liste des pins actifs sur votre nœud de résultat.",
+      ),
+      TitleModule(
+        id: '3_editor',
+        title: "3. Le Système Nodal & l'Éditeur de Matériaux",
+      ),
+      InfoModule(
+        id: '3_editor_obj',
+        text:
+            "Prendre en main l'interface graphique de l'éditeur et connecter logiquement vos premières données.",
+        type: InfoType.objective,
+      ),
+      TextModule(
+        id: '3_editor_text',
+        title: "L'interface visuelle du Material Editor",
+        content:
+            "L'éditeur de matériaux d'Unreal Engine 5 est un environnement nodal. Au lieu d'écrire du code textuel complexe, vous interconnectez des nœuds graphiques qui représentent des données physiques ou des formules mathématiques.",
+      ),
+      ListModule(
+        id: '3_editor_list',
+        title: "Les types de données fondamentaux",
+        intro:
+            "Pour piloter vos matériaux, vous manipulerez principalement trois formats de données :",
+        items: [
+          "Scalar (Float) : Une valeur numérique simple (ex : 0.5 pour définir une rugosité moyenne). Raccourci clavier : Maintenez 1 + clic gauche",
+          "Vector 2 : Deux valeurs liées (ex : coordonnées U et V pour étirer une texture). Raccourci : Maintenez 2 + clic gauche",
+          "Vector 3 (RGB) : Trois valeurs liées (ex : coordonnées spatiales X,Y,Z ou couleur Rouge, Vert, Bleu). Raccourci : Maintenez 3 + clic gauche",
+        ],
+        outro:
+            "Vous ne pouvez connecter que des types de données compatibles entre eux pour éviter les erreurs de compilation.",
+      ),
+      TitleModule(
+        id: '3_cleanliness',
+        title: "4. Propreté et Lisibilité du Graphe (Commentaires & Reroutes)",
+      ),
+      InfoModule(
+        id: '3_cleanliness_obj',
+        text:
+            "Adopter des méthodes de travail professionnelles pour éliminer les \"nœuds spaghettis\".",
+        type: InfoType.objective,
+      ),
+      TextModule(
+        id: '3_cleanliness_text',
+        title: "L'importance d'un graphe propre",
+        content:
+            "En production, un matériau maître peut rapidement compter des dizaines, voire des centaines de nœuds. Sans discipline de rangement, votre code visuel devient illisible pour vous-même et pour vos collaborateurs. Unreal Engine intègre des outils dédiés à la clarté visuelle.",
+      ),
+      SideBySideModule(
+        id: '3_cleanliness_sbs',
+        title: "Structure et Lisibilité",
+        content:
+            "La structuration logique de vos connexions est aussi importante que la justesse de vos calculs. Alignez vos alignements de nœuds et commentez vos blocs logiques pour accélérer le débogage.",
+        imagePath: 'assets/images/organized_material_graph.png',
+        layout: ContentLayout.textRight,
+        caption:
+            "Aperçu d'un graphe de production aéré, rangé et sectorisé",
+      ),
+      ListModule(
+        id: '3_cleanliness_list',
+        title: "Les trois outils d'hygiène du graphe",
+        intro:
+            "Prenez le réflexe d'organiser votre travail en utilisant ces fonctionnalités au quotidien :",
+        items: [
+          "Les boîtes de commentaires (C) : Sélectionnez un groupe de nœuds logiquement liés, appuyez sur la touche C, et donnez un nom clair à la boîte (ex : \"Normal Map Offset\"). Vous pouvez également ajuster sa couleur de fond",
+          "Les Reroute Nodes : Double-cliquez sur n'importe quel fil de connexion actif pour créer un point d'ancrage mobile. Cela vous permet de contourner proprement les blocs de nœuds sans couper le flux",
+          "Les Named Reroute Nodes : Créez un nœud de sortie nommé (ex : \"AO_Value\") puis rappelez-le à n'importe quel autre endroit du graphe. Cela permet de téléporter l'information sans tirer de longs câbles croisés visibles à l'écran.",
+        ],
+        outro:
+            "Un graphe lisible est le signe distinctif d'un artiste technique professionnel.",
+      ),
+      TitleModule(
+        id: '3_textures',
+        title: "5. Intégration et Gestion des Textures",
+      ),
+      InfoModule(
+        id: '3_textures_obj',
+        text:
+            "Importer efficacement vos fichiers et exploiter la puissance des textures composites ORM.",
+        type: InfoType.objective,
+      ),
+      TextModule(
+        id: '3_textures_text',
+        title: "Comprendre les textures PBR et le packing ORM",
+        content:
+            "Unreal Engine accepte la majorité des formats d'image courants (.PNG, .TGA, .EXR). Lors de l'import, le moteur encapsule la texture dans un nœud Texture Sample. Pour optimiser les ressources matérielles de la carte graphique, les studios modernes condensent plusieurs informations monochromes dans une seule texture couleur. C'est la technique du packing ORM.",
+      ),
+      SideBySideModule(
+        id: '3_textures_sbs',
+        title: "Le fonctionnement de la texture ORM",
+        content:
+            "Plutôt que d'importer trois textures d'ajustement distinctes, nous combinons les données d'Occlusion, de Roughness et de Metallic dans les canaux de couleur Rouge, Vert et Bleu d'un fichier unique.",
+        imagePath: 'assets/images/orm_packing_channels.png',
+        layout: ContentLayout.textLeft,
+        caption:
+            "Découpage des masques d'une texture ORM selon ses canaux R, G et B",
+      ),
+      ListModule(
+        id: '3_textures_list',
+        title: "L'anatomie d'une texture ORM",
+        intro:
+            "L'ordre des données au sein des canaux physiques respecte une nomenclature stricte :",
+        items: [
+          "Canal Rouge (R) : Contient l'Ambient Occlusion (AO) qui définit l'ombrage passif dans les micro-creux",
+          "Canal Vert (G) : Contient la Roughness (Rugosité) qui contrôle la netteté et la diffusion des reflets",
+          "Canal Bleu (B) : Contient la Metallic (Métallicité) qui détermine si la surface se comporte comme un métal (1) ou un non-métal (0)",
+        ],
+        outro:
+            "L'utilisation de cette méthode réduit de deux tiers les requêtes mémoire d'échantillonnage de textures.",
+      ),
+      InfoModule(
+        id: '3_textures_warn',
+        text:
+            "Pour toute texture composite (comme l'ORM) ou masque mathématique ne représentant pas une couleur visible, vous devez impérativement décocher la case sRGB dans son panneau d'importation sous Unreal Engine, et vous assurer que son \"Sampler Type\" est bien réglé sur Data ou Linear Color dans votre matériau. Si vous oubliez cette étape, le moteur appliquera une correction de gamma erronée qui faussera vos calculs physiques !",
+        type: InfoType.warning,
+      ),
+      TitleModule(
+        id: '3_normals',
+        title: "6. Gestion des Normal Maps (DirectX vs OpenGL)",
+      ),
+      InfoModule(
+        id: '3_normals_obj',
+        text:
+            "Identifier et corriger instantanément un problème de relief inversé à l'écran.",
+        type: InfoType.objective,
+      ),
+      TextModule(
+        id: '3_normals_text',
+        title: "Le conflit de standards des cartes de normales",
+        content:
+            "Les Normal Maps utilisent des vecteurs de couleur pour modifier virtuellement l'orientation de la lumière à la surface d'un maillage, donnant l'illusion d'un relief 3D complexe. Cependant, deux standards industriels concurrents s'affrontent sur l'orientation du relief vertical (canal Vert) : DirectX et OpenGL.",
+      ),
+      ListModule(
+        id: '3_normals_list',
+        title: "Différences et diagnostic",
+        intro:
+            "Apprenez à identifier le standard utilisé par votre texture :",
+        items: [
+          "DirectX : Le standard natif d'Unreal Engine. Le canal Vert (axe Y) simule une lumière orientée vers le bas",
+          "OpenGL : Le standard utilisé par des logiciels comme Blender ou Unity. Le canal Vert pointe vers le haut",
+          "Le symptôme : Si une texture de briques ou de roche affiche des creux qui semblent ressortir sous forme de bosses absurdes, votre texture est au format OpenGL.",
+        ],
+        outro:
+            "Heureusement, vous n'avez pas besoin de réexporter votre texture depuis votre outil d'édition d'origine.",
+      ),
+      InfoModule(
+        id: '3_normals_info',
+        text:
+            "Pour corriger une Normal Map inversée, ouvrez le fichier de texture directement dans Unreal Engine, localisez l'option Flip Green Channel dans la section \"Texture\" du panneau Details, et cochez-la. Le moteur inversera mathématiquement l'axe Y pour le rendre compatible avec l'UE5.",
         type: InfoType.info,
+      ),
+      TitleModule(
+        id: '3_logic',
+        title: "7. Logique et Mathématiques Visuelles (Lerp & Masques)",
+      ),
+      InfoModule(
+        id: '3_logic_obj',
+        text:
+            "Assembler des variations de textures avancées en maîtrisant l'interpolation linéaire et le traitement des contrastes.",
+        type: InfoType.objective,
+      ),
+      TextModule(
+        id: '3_logic_text',
+        title: "Le nœud Lerp (Linear Interpolate)",
+        content:
+            "Le nœud Lerp (raccourci : touche L + clic) est l'un des outils mathématiques les plus puissants du Material Editor. Il permet de mélanger deux textures ou deux couleurs distinctes en se basant sur un masque en niveaux de gris branché dans son entrée Alpha.",
+      ),
+      ListModule(
+        id: '3_logic_list',
+        title: "Fonctionnement mathématique et logique",
+        intro: "Voici comment le moteur interprète les données connectées au Lerp :",
+        items: [
+          "Entrée A : La couleur ou la texture qui apparaît là où le masque Alpha est totalement noir (valeur 0)",
+          "Entrée B : La couleur ou la texture qui s'affiche là où le masque Alpha est totalement blanc (valeur 1)",
+          "Entrée Alpha : Le masque d'interpolation (les gris intermédiaires créent un mélange progressif)",
+          "Ajustement de contraste : Utilisez le nœud CheapContrast connecté en amont de votre masque pour durcir ou adoucir la transition de votre mélange.",
+        ],
+        outro:
+            "La formule de calcul exécutée en arrière-plan par la carte graphique est la suivante : A * (1 - Alpha) + B * Alpha",
+      ),
+      TitleModule(
+        id: '3_effects',
+        title: "8. Effets Avancés de Surface (Fresnel & Émissif)",
+      ),
+      InfoModule(
+        id: '3_effects_obj',
+        text:
+            "Donner de la profondeur à vos surfaces grâce aux effets d'angle de caméra et à l'auto-illumination dynamique.",
+        type: InfoType.objective,
+      ),
+      TextModule(
+        id: '3_effects_text',
+        title: "Le Fresnel et l'Émissif au service de Lumen",
+        content:
+            "Pour briser l'aspect artificiel des matériaux numériques plats, vous pouvez utiliser des techniques de rendu dynamique basées sur la physique optique et la projection lumineuse.",
+      ),
+      ListModule(
+        id: '3_effects_list',
+        title: "Les deux effets indispensables de dynamisme",
+        intro:
+            "Intégrez ces concepts pour donner un aspect vivant et crédible à vos décors :",
+        items: [
+          "L'effet Fresnel : Simule l'augmentation de la réflectivité d'une surface lorsque l'angle d'observation se rapproche de l'angle tangentiel (effet de bordure). Indispensable pour recréer le comportement de surfaces comme l'eau, le verre, ou des matières organiques comme le velours ou le duvet de la peau",
+          "La propriété Émissive : Permet à un matériau d'émettre sa propre lumière. En branchant une couleur multipliée par une forte valeur (nœud Multiply) dans le canal Emissive Color, votre objet s'illuminera physiquement et projettera de la lumière indirecte en temps réel dans votre niveau grâce au système d'illumination globale Lumen.",
+        ],
+        outro:
+            "Ces nœuds apportent instantanément un aspect haut de gamme et dynamique à vos créations.",
+      ),
+      TitleModule(
+        id: '3_coordinates',
+        title: "9. Coordonnées de Texture (UVs, Tiling et Rotation)",
+      ),
+      InfoModule(
+        id: '3_coordinates_obj',
+        text:
+            "Prendre le contrôle absolu sur l'échelle, le décalage et l'orientation de vos matières.",
+        type: InfoType.objective,
+      ),
+      TextModule(
+        id: '3_coordinates_text',
+        title: "Manipuler l'espace UV",
+        content:
+            "Par défaut, une texture s'applique sur un modèle 3D en suivant les coordonnées de dépliage UV créées par le modeleur 3D. Vous pouvez intercepter et modifier ces données de coordonnées de manière dynamique au sein du shader.",
+      ),
+      SideBySideModule(
+        id: '3_coordinates_sbs',
+        title: "Contrôle du Tiling",
+        content:
+            "Pour modifier la répétition d'une texture (Tiling), nous appelons le nœud TextureCoordinate (touche U + clic). En le multipliant par un paramètre numérique simple, vous augmentez sa fréquence de répétition.",
+        imagePath: 'assets/images/uv_tiling_logic.png',
+        layout: ContentLayout.textLeft,
+        caption:
+            "Réseau de nœuds multipliant les coordonnées de texture pour augmenter le Tiling",
+      ),
+      ListModule(
+        id: '3_coordinates_list',
+        title: "Opérations de coordonnées avancées",
+        intro:
+            "Voici comment manipuler les coordonnées UV au-delà de la simple répétition :",
+        items: [
+          "Le Tiling : Multiplier les coordonnées UV par une valeur supérieure à 1 augmente le nombre de répétitions de la texture sur la surface",
+          "L'Offset : Ajouter une valeur (nœud Add) aux coordonnées UV décale la position de la texture sur l'axe horizontal (U) ou vertical (V)",
+          "La Rotation : Utilisez le nœud CustomRotator. Ce nœud prend vos coordonnées UV, un point pivot (généralement 0.5, 0.5), et une valeur d'angle pour faire pivoter proprement vos textures sur votre modèle.",
+        ],
+        outro:
+            "Ces manipulations s'effectuent sans altérer le maillage 3D original.",
+      ),
+      TitleModule(
+        id: '3_triplanar',
+        title: "10. Projection Triplanaire (World Aligned)",
+      ),
+      InfoModule(
+        id: '3_triplanar_obj',
+        text:
+            "Créer des matériaux automatiques et homogènes, totalement indépendants du dépliage UV de vos objets.",
+        type: InfoType.objective,
+      ),
+      TextModule(
+        id: '3_triplanar_text',
+        title: "La technique du World Alignement",
+        content:
+            "Sur d'immenses structures architecturales ou des éléments de décors naturels (falaises de roches, parois de grottes), l'application de textures standards via coordonnées UV montre ses limites : étirements disgracieux aux jointures, discontinuité des motifs. La projection triplanaire résout ce problème en projetant les textures directement depuis les axes mondiaux (World Space) de la scène.",
+      ),
+      ListModule(
+        id: '3_triplanar_list',
+        title: "Les outils de projection globale",
+        intro:
+            "Unreal Engine intègre deux nœuds spécialisés pour réaliser cette tâche complexe :",
+        items: [
+          "World Aligned Texture : Remplace l'échantillonnage de votre texture de couleur ou ORM standard. Il projette l'image de manière équivalente depuis le haut, le côté gauche et le côté droit",
+          "World Aligned Normal : Effectue la même opération de projection géométrique tridimensionnelle sur vos Normal Maps pour assurer la cohérence des calculs d'ombrage",
+          "L'avantage clé : Les textures s'alignent parfaitement d'un objet à l'autre sans couture, même si les objets sont pivotés ou redimensionnés dans l'espace",
+          "L'inconvénient : Cette opération requiert trois fois plus d'appels d'échantillonnage de texture (Texture Samples) qu'un affichage classique. Utilisez-la avec parcimonie sur les objets volumineux.",
+        ],
+        outro:
+            "C'est l'outil indispensable pour l'intégration d'assets de type mégastructures ou décors modulaires.",
+      ),
+      TitleModule(
+        id: '3_panner',
+        title: "11. Animation de Matériaux (Panner)",
+      ),
+      InfoModule(
+        id: '3_panner_obj',
+        text:
+            "Insuffler de la vie et du mouvement continu à vos textures de fluides ou d'écrans.",
+        type: InfoType.objective,
+      ),
+      TextModule(
+        id: '3_panner_text',
+        title: "Animer les surfaces dans le temps",
+        content:
+            "Pour simuler le mouvement de l'eau qui coule, de la lave en fusion, d'écrans technologiques ou du vent dans la végétation, vous devez déplacer vos coordonnées UV de manière fluide et constante.",
+      ),
+      ListModule(
+        id: '3_panner_list',
+        title: "Exploiter le nœud Panner",
+        intro:
+            "Le nœud Panner (touche P + clic) décale continuellement les coordonnées UV d'une texture en fonction du temps de jeu :",
+        items: [
+          "Connectez un nœud TextureCoordinate dans l'entrée Coordinate du Panner",
+          "Renseignez les vitesses de défilement souhaitées sur les axes horizontal (Speed X) et vertical (Speed Y) dans les propriétés du nœud",
+          "Pour rendre ces vitesses modifiables dynamiquement depuis vos Material Instances, utilisez le nœud Append Vector pour fusionner deux paramètres scalaires distincts et connectez le résultat dans le pin Speed de votre Panner.",
+        ],
+        outro:
+            "Cette méthode permet d'économiser d'importantes ressources par rapport à l'utilisation de vidéos ou de séquences d'images lourdes.",
+      ),
+      TitleModule(
+        id: '3_displacement',
+        title: "12. Displacement de Surface avec Nanite",
+      ),
+      InfoModule(
+        id: '3_displacement_obj',
+        text:
+            "Générer un relief géométrique réel à l'aide de vos textures de hauteur en tirant parti du système Nanite.",
+        type: InfoType.objective,
+      ),
+      TextModule(
+        id: '3_displacement_text',
+        title: "La révolution géométrique d'Unreal Engine 5",
+        content:
+            "Les anciennes méthodes lourdes de tessellation en temps réel issues de l'UE4 ont laissé place à une intégration directe avec Nanite, le moteur géométrique virtualisé de l'UE5. Vous pouvez désormais déformer physiquement la géométrie de vos objets à l'aide d'une texture de hauteur (Heightmap / Displacement map) directement au sein du shader.",
+      ),
+      ListModule(
+        id: '3_displacement_list',
+        title: "Étapes d'activation de la déformation Nanite",
+        intro:
+            "Pour obtenir des détails géométriques réels sans détruire vos performances de rendu :",
+        items: [
+          "Activez le support Nanite sur votre Static Mesh dans le Content Browser",
+          "Dans les paramètres de votre matériau maître, cochez l'option d'activation du déplacement Nanite (Displacement)",
+          "Reliez votre texture de hauteur monochrome à l'entrée Displacement de votre nœud de résultat final",
+          "Connectez un paramètre d'amplitude pour contrôler précisément la hauteur de la déformation physique depuis votre Material Instance.",
+        ],
+        outro:
+            "Cette technologie permet d'afficher des millions de polygones de détails géométriques réels pour un coût de performance minimal.",
+      ),
+      TitleModule(
+        id: '3_functions',
+        title: "13. Modularité et Fonctions de Matériaux (Material Functions)",
+      ),
+      InfoModule(
+        id: '3_functions_obj',
+        text:
+            "Créer des bibliothèques de fonctions réutilisables pour simplifier l'organisation de vos projets.",
+        type: InfoType.objective,
+      ),
+      TextModule(
+        id: '3_functions_text',
+        title: "Créer ses propres nœuds réutilisables",
+        content:
+            "Si vous vous apercevez que vous recréez constamment la même suite de nœuds dans plusieurs matériaux différents (par exemple, un réseau calculant un tiling spécifique pour vos textures ORM), vous devez créer une Material Function (MF_).",
+      ),
+      SideBySideModule(
+        id: '3_functions_sbs',
+        title: "Modularité technique",
+        content:
+            "Une Material Function est un sous-graphe indépendant. En utilisant des nœuds d'entrée (Function Input) et de sortie (Function Output), vous pouvez encapsuler des calculs complexes sous la forme d'un seul et unique nœud réutilisable à l'infini par glisser-déposer dans n'importe quel autre matériau.",
+        imagePath: 'assets/images/material_function_graph.png',
+        layout: ContentLayout.textRight,
+        caption:
+            "À gauche, un calcul complexe condensé; à droite, l'unique nœud résultant réutilisable",
+      ),
+      InfoModule(
+        id: '3_functions_tip',
+        text:
+            "Pour créer une fonction, faites un clic droit dans votre Content Browser et choisissez Materials > Material Function. Nommez-la toujours avec le préfixe MF_ (ex : MF_TilingAndOffset).",
+        type: InfoType.tip,
+      ),
+      TitleModule(
+        id: '3_parameters',
+        title: "14. Exposition et Organisation des Paramètres (Groupes)",
+      ),
+      InfoModule(
+        id: '3_parameters_obj',
+        text:
+            "Rendre vos interfaces de Material Instances ergonomiques et intuitives pour vos équipes de production.",
+        type: InfoType.objective,
+      ),
+      TextModule(
+        id: '3_parameters_text',
+        title: "L'ergonomie de l'interface d'instance",
+        content:
+            "Lorsque vous convertissez un nœud en paramètre dans votre Master Material, celui-ci s'affiche dans l'interface utilisateur de votre Material Instance. Si vous exposez de nombreux paramètres sans les organiser, l'artiste se retrouvera face à une liste désordonnée et inexploitable. Vous devez structurer votre interface de manière rigoureuse.",
+      ),
+      ListModule(
+        id: '3_parameters_list',
+        title: "Les bonnes pratiques de structuration",
+        intro:
+            "Les bonnes pratiques de structuration :",
+        items: [
+          "La catégorisation par Groupes : Dans les propriétés de chaque paramètre du Master Material, remplissez le champ Group. Utilisez des noms de catégories structurés avec un préfixe numérique (ex : \"01 - Base Color\", \"02 - Normal Map\", \"03 - Displacement\")",
+          "La définition des priorités (Sort Priority) : Utilisez le champ \"Sort Priority\" pour ordonner précisément vos curseurs à l'intérieur d'un même groupe (les valeurs les plus petites apparaissent en haut de la liste).",
+        ],
+        outro:
+            "Un Material Instance bien ordonné réduit les erreurs artistiques et fluidifie le travail d'intégration.",
+      ),
+      TitleModule(
+        id: '3_application',
+        title: "15. Application Pratique sur le Terrain",
+      ),
+      InfoModule(
+        id: '3_application_obj',
+        text:
+            "Assigner vos créations sur vos objets 3D au sein de la bibliothèque et directement dans vos scènes.",
+        type: InfoType.objective,
+      ),
+      TextModule(
+        id: '3_application_text',
+        title: "Affecter et tester vos matériaux",
+        content:
+            "Une fois votre Material Instance créée et configurée de manière ergonomique, il ne vous reste plus qu'à l'affecter aux éléments de votre scène 3D. Deux méthodes s'offrent à vous selon la portée souhaitée de votre modification.",
+      ),
+      ListModule(
+        id: '3_application_list',
+        title: "Les deux méthodes d'assignation",
+        intro:
+            "Choisissez la technique adaptée à votre situation de travail :",
+        items: [
+          "Méthode Globale (Asset Level) : Ouvrez votre Static Mesh directement dans son éditeur dédié à partir du Content Browser. Glissez votre Material Instance dans le slot de matériau par défaut de l'objet. Ce maillage utilisera désormais ce matériau à chaque fois qu'il sera glissé dans n'importe quel niveau de votre projet",
+          "Méthode Locale (Actor Level) : Glissez-déposez votre Material Instance directement sur l'un des objets placés dans votre scène (Viewport). Cette modification locale remplace temporairement le matériau par défaut uniquement pour cet acteur précis de votre niveau, sans modifier l'asset de base dans votre bibliothèque.",
+        ],
+        outro:
+            "Vous pouvez tester instantanément la réaction de vos surfaces aux variations de lumière de votre environnement.",
+      ),
+      ResourceModule(
+        id: '3_application_res',
+        title: "Pack complet de textures de production",
+        description: "pack_textures_pbr_shading_ue5.zip",
+        fileName: "pack_textures_pbr_shading_ue5.zip",
+        downloadUrl:
+            "https://drive.google.com/drive/folders/placeholder_textures_unreal_training_shading",
+      ),
+      TitleModule(
+        id: '3_quiz_validation',
+        title: "Validation des Connaissances",
+      ),
+      QuizModule(
+        id: '3_quiz_1',
+        question:
+            "Pourquoi utilise-t-on des Material Instances (MI_) plutôt que de multiplier les Master Materials (M_) ?",
+        options: [
+          "Parce que les instances permettent de modifier la structure géométrique d'un objet en temps réel",
+          "Parce que les instances n'exécutent pas de nouvelle compilation de shader et s'appliquent instantanément",
+          "Parce que les instances permettent d'écrire directement du code C++",
+        ],
+        correctIndices: [1],
+        explanation:
+            "Les instances se contentent de modifier des variables pré-compilées par leur parent, éliminant les temps d'attente de compilation.",
+      ),
+      QuizModule(
+        id: '3_quiz_2',
+        question:
+            "Que signifie l'acronyme ORM et comment sont réparties ses données de masques monochromes ?",
+        options: [
+          "Occlusion (Rouge), Roughness (Vert), Metallic (Bleu)",
+          "Orientation (Rouge), Refraction (Vert), Multiplier (Bleu)",
+          "Opaque (Rouge), Roughness (Vert), Masked (Bleu)",
+        ],
+        correctIndices: [0],
+        explanation:
+            "L'ORM structure ses informations de manière standardisée : Occlusion sur le canal Rouge, Rugosité sur le Vert, et Métallicité sur le Bleu.",
+      ),
+      QuizModule(
+        id: '3_quiz_3',
+        question:
+            "Quel est le standard de Normal Map natif d'Unreal Engine et comment corriger une texture importée du standard opposé ?",
+        options: [
+          "Standard OpenGL; cocher l'option \"Invert Channels\" dans le shader",
+          "Standard DirectX; cocher l'option \"Flip Green Channel\" dans les propriétés d'Unreal Engine",
+          "Standard DirectX; inverser la texture de gauche à droite",
+        ],
+        correctIndices: [1],
+        explanation:
+            "L'UE5 utilise DirectX. Si une texture utilise le standard OpenGL, cocher \"Flip Green Channel\" inverse l'axe Y pour corriger instantanément le relief.",
+      ),
+      QuizModule(
+        id: '3_quiz_4',
+        question:
+            "Quel nœud permet de faire défiler en continu une texture sur une surface pour simuler un fluide ou du vent ?",
+        options: [
+          "CustomRotator",
+          "World Aligned Texture",
+          "Panner",
+        ],
+        correctIndices: [2],
+        explanation:
+            "Le nœud Panner applique un décalage continu des coordonnées de texture (UVs) en fonction du temps.",
       ),
     ],
   ),
