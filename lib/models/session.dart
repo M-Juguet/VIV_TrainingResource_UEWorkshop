@@ -2029,7 +2029,7 @@ const List<SessionModel> unrealSessions = [
         description: "pack_textures_pbr_shading_ue5.zip",
         fileName: "pack_textures_pbr_shading_ue5.zip",
         downloadUrl:
-            "https://drive.google.com/file/d/10yP38sR1nKS19caqNT-qtHSn8wQ-e4hf/view?usp=sharing",
+            "https://vivprodcom-my.sharepoint.com/:u:/g/personal/m-juguet_viv-prod_com/IQAaD0tQ1SBzSpjjce9AuXKEAQQWHWVDCO3bH0y0-_n_LIM?e=HhTTph",
       ),
       TitleModule(
         id: '3_quiz_validation',
